@@ -4,8 +4,8 @@
 
 ## Breakdown
 
-* [Week Breakdown](breakdown/week-breakdown.md)
 * [Course Overview](breakdown/course-overview.md)
+* [Week Breakdown](breakdown/week-breakdown.md)
 
 ## Labs
 
