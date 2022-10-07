@@ -4,6 +4,10 @@
 
 ### Junior
 
+{% content-ref url="https://app.gitbook.com/s/kZz3gnaYbTd4P6zvkQkn/" %}
+[SYS-300: Linux From Scratch](https://app.gitbook.com/s/kZz3gnaYbTd4P6zvkQkn/)
+{% endcontent-ref %}
+
 {% content-ref url="https://app.gitbook.com/s/GG1ypcCqcB1a4JSBwHti/" %}
 [NET-330: Network Design](https://app.gitbook.com/s/GG1ypcCqcB1a4JSBwHti/)
 {% endcontent-ref %}
