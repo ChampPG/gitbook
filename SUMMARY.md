@@ -1,3 +1,3 @@
 # Table of contents
 
-* [Welcome!](README.md)
+* [Tech Journal Home](README.md)
