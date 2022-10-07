@@ -1,0 +1,14 @@
+# Table of contents
+
+* [SYS-300: Linux From Scratch](README.md)
+* [Playbook](playbook.md)
+
+## Breakdown
+
+* [Course Overview](breakdown/course-overview.md)
+* [Week Breakdown](breakdown/week-breakdown.md)
+
+## Milestones
+
+* [Milestone 1](milestones/milestone-1.md)
+* [Page 1](milestones/page-1.md)
