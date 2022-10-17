@@ -11,4 +11,4 @@
 ## Milestones
 
 * [Milestone 1](milestones/milestone-1.md)
-* [Page 1](milestones/page-1.md)
+* [Milestone 2](milestones/milestone-2.md)
