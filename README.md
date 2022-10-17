@@ -1,6 +1,5 @@
 ---
 description: This is my gitbook for all my of tech related needs.
-layout: landing
 ---
 
 # Welcome!
