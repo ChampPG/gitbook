@@ -8,7 +8,7 @@ description: >-
 
 ## Currently Under Construction!
 
-<figure><img src=".gitbook/assets/Construction.jpg" alt=""><figcaption></figcaption></figure>
+Anything that says `Access Denied` is currently private and is being worked on.
 
 ## Containerization
 
