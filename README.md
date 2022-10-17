@@ -8,7 +8,7 @@ description: >-
 
 ## Currently Under Construction!
 
-Anything that says `Access Denied` is currently private and is being worked on.
+Anything that says `Access Denied` or is `red` is currently private and is being worked on.
 
 ## Containerization
 
@@ -18,7 +18,7 @@ Anything that says `Access Denied` is currently private and is being worked on.
 [Docker and Docker-Compose](https://app.gitbook.com/s/LTxC0kKnm5nFlrTw38xe/)
 {% endcontent-ref %}
 
-### Kubernetes
+### <mark style="color:red;">Kubernetes</mark>
 
 {% content-ref url="https://app.gitbook.com/s/k2UiHnoKVMW7mD3plt0k/" %}
 [Kubernetes](https://app.gitbook.com/s/k2UiHnoKVMW7mD3plt0k/)
@@ -34,7 +34,7 @@ Anything that says `Access Denied` is currently private and is being worked on.
 [Bash Scripting](https://app.gitbook.com/s/6XZyyBSTx1qy1EX4HskU/)
 {% endcontent-ref %}
 
-### Windows
+### <mark style="color:red;">Windows</mark>
 
 {% content-ref url="https://app.gitbook.com/s/8juBd5ipUP887GQrrIae/" %}
 [Powershell](https://app.gitbook.com/s/8juBd5ipUP887GQrrIae/)
@@ -46,13 +46,13 @@ Anything that says `Access Denied` is currently private and is being worked on.
 
 ## General
 
-### Python
+### <mark style="color:red;">Python</mark>
 
 {% content-ref url="https://app.gitbook.com/s/jWQ4vriJ6TiadZl0Naws/" %}
 [Python](https://app.gitbook.com/s/jWQ4vriJ6TiadZl0Naws/)
 {% endcontent-ref %}
 
-### C++
+### <mark style="color:red;">C++</mark>
 
 {% content-ref url="https://app.gitbook.com/s/lrKdqTrTfgvKnIg0Wmrq/" %}
 [C++](https://app.gitbook.com/s/lrKdqTrTfgvKnIg0Wmrq/)
@@ -74,7 +74,7 @@ Anything that says `Access Denied` is currently private and is being worked on.
 
 ## Data Bases
 
-### MySQL
+### <mark style="color:red;">MySQL</mark>
 
 {% content-ref url="https://app.gitbook.com/s/WhvXJyXlVOVaNw1tk60L/" %}
 [MySQL](https://app.gitbook.com/s/WhvXJyXlVOVaNw1tk60L/)
@@ -88,13 +88,13 @@ Anything that says `Access Denied` is currently private and is being worked on.
 
 ## OS Based Cheat Sheets
 
-### Linux
+### <mark style="color:red;">Linux</mark>
 
 {% content-ref url="https://app.gitbook.com/s/crlwEEujikqInjIdSCfv/" %}
 [Linux Cheat Sheet](https://app.gitbook.com/s/crlwEEujikqInjIdSCfv/)
 {% endcontent-ref %}
 
-### Windows Desktop/Server
+### <mark style="color:red;">Windows Desktop/Server</mark>
 
 {% content-ref url="https://app.gitbook.com/s/LfVsTQbAA7wSvw7g8YP7/" %}
 [Windows Desktop Cheat Sheet](https://app.gitbook.com/s/LfVsTQbAA7wSvw7g8YP7/)
