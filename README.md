@@ -1,5 +1,6 @@
 ---
 description: This is my gitbook for all my of tech related needs.
+layout: landing
 ---
 
 # Welcome!
@@ -16,7 +17,7 @@ When I’m not coding or securing our IT infrastructure, I do puzzle games, raci
 
 ### Resume:
 
-{% file src=".gitbook/assets/Paul-Gleason-Resume.docx" %}
+{% file src=".gitbook/assets/Paul Gleason Resume.docx" %}
 
 <figure><img src=".gitbook/assets/IMG_7008.jpg" alt=""><figcaption><p>Me right after finishing my 70Tb NAS</p></figcaption></figure>
 
