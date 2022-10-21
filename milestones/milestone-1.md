@@ -58,6 +58,25 @@ echo awk is `/usr/bin/awk --version | head -n1`
 else
 echo "awk not found"
 fi
+gcc --version | head -n1
+g++ --version | head -n1
+grep --version | head -n1
+gzip --version | head -n1
+cat /proc/version
+m4 --version | head -n1
+make --version | head -n1
+patch --version | head -n1
+echo Perl `perl -V:version`
+python3 --version
+sed --version | head -n1
+tar --version | head -n1
+makeinfo --version | head -n1 # texinfo version
+xz --version | head -n1
+echo 'int main(){}' > dummy.c && g++ -o dummy dummy.c
+if [ -x dummy ]
+then echo "g++ compilation OK";
+else echo "g++ compilation failed"; fi
+rm -f dummy.c dummy
 EOF
 ```
 
@@ -75,19 +94,19 @@ Output from the first `./version-check.sh` pass
 **FIX:**&#x20;
 
 ```
-sudo apt install bison binutils gawk
+sudo apt install bison binutils gawk texinfo
 sudo ln -sf bash /bin/sh
 ```
 
 Output after installing all dependencies
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Clean version-check.sh</p></figcaption></figure>
 
 ### Partitioning Scheme
 
 /dev/sdb needs to be partitioned
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>lsblk output</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (3).png" alt=""><figcaption><p>lsblk output</p></figcaption></figure>
 
 #### Setup Partitions
 
@@ -163,4 +182,4 @@ reboot
 lsblk
 ```
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
