@@ -11,7 +11,7 @@ Storage: 1x40GB & 1x30GB SCSI disk\
 &#x20;   \- Second disk is called `mothership-0.vmdk`\
 &#x20;Boot: BIOS
 
-![](<../.gitbook/assets/image (3).png>)
+![](<../.gitbook/assets/image (3) (2).png>)
 
 ### Startup Commands
 
@@ -117,7 +117,7 @@ mkswap /dev/sdb5
 lsblk -f /dev/sdb
 ```
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>/dev/sdb partitioned</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>/dev/sdb partitioned</p></figcaption></figure>
 
 ### Setting $LFS (2.6)
 
@@ -147,5 +147,20 @@ mkdir -pv $LFS
 mount -c -t ext4 /dev/sdb3 $LFS
 mkdir -v $LFS/home
 mount -c -t ext4 /dev/sdb4 $LFS/home
-/swaopon /dev/sdb5
+swapon /dev/sdb5
+```
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+### Mount on Boot
+
+```
+nano /etc/fstab
+```
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+```
+reboot
+lsblk
 ```
