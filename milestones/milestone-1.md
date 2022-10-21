@@ -11,4 +11,14 @@ Storage: 1x40GB & 1x30GB SCSI disk\
 &#x20;   \- Second disk is called `mothership-0.vmdk`\
 &#x20;Boot: BIOS
 
-![](<../.gitbook/assets/image (1).png>)\
+![](../.gitbook/assets/image.png)
+
+`sudo apt install ssh`
+
+### Version Check
+
+Output from the first version-check.sh pass
+
+### ![](<../.gitbook/assets/image (2).png>)
+
+**FIX:** `sudo apt install bison binutils gawk`
