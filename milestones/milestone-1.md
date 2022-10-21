@@ -87,7 +87,7 @@ Output after installing all dependencies
 
 /dev/sdb needs to be partitioned
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>lsblk output</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>lsblk output</p></figcaption></figure>
 
 #### Setup Partitions
 
@@ -102,7 +102,7 @@ Now select `Write` and type `yes`
 
 `lsblk` after cfdisk
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 ```
 mkfs.ext2 /dev/sdb2 -L LFSBOOT
@@ -141,14 +141,12 @@ echo $LFS
 
 ### Mounting LFS manually (2.7)
 
-```
-sudo -i
+<pre><code>sudo -i
 mkdir -pv $LFS
 mount -c -t ext4 /dev/sdb3 $LFS
 mkdir -v $LFS/home
 mount -c -t ext4 /dev/sdb4 $LFS/home
-swapon /dev/sdb5
-```
+<strong>swapon /dev/sdb5</strong></code></pre>
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -158,9 +156,11 @@ swapon /dev/sdb5
 nano /etc/fstab
 ```
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 reboot
 lsblk
 ```
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
