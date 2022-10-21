@@ -24,6 +24,11 @@ sudo mkdir /mnt/lfs
 ### Version Check
 
 ```
+sudo apt install build-essential
+sudo apt dist-upgrade
+```
+
+```
 cat > version-check.sh << "EOF"
 #!/bin/bash
 # Simple script to list version numbers of critical development tools
@@ -60,7 +65,7 @@ Make executable and run
 
 ```
 sudo chmod +x ./version-check.sh
-./version-check.sh
+bash version-check.sh
 ```
 
 Output from the first `./version-check.sh` pass
