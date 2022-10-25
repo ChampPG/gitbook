@@ -4,7 +4,7 @@
 
 During this lab we reviewed our skills in packet tracer with the basic lab. The left is foster  `192.168.3.0/24` and skiff on the right `192.168.1.0/24` with the CNCS router in the middle.
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (1).png>)
 
 ### What was easy about this lab?
 

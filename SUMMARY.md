@@ -15,6 +15,10 @@
 * [Lab 3.3: DHCP Server in Packet Tracer](labs/lab-3.3-dhcp-server-in-packet-tracer.md)
 * [Lab 4.1: Console Access Mini-Lab](labs/lab-4.1-console-access-mini-lab.md)
 * [Lab 4.2: Small Enterprise-Class Lab](labs/lab-4.2-small-enterprise-class-lab.md)
+* [Lab 6-1 NAT Configuration - Static NAT](labs/lab-6-1-nat-configuration-static-nat.md)
+* [Lab 6-2 NAT Configuration - PAT](labs/lab-6-2-nat-configuration-pat.md)
+* [Lab 6-3 NAT LAB 3- Champlain Example Lab](labs/lab-6-3-nat-lab-3-champlain-example-lab.md)
+* [Lab 8-1B OSPF PT Activity](labs/lab-8-1b-ospf-pt-activity.md)
 
 ## Notes
 

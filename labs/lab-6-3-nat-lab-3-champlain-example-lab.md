@@ -1,0 +1,3 @@
+# Lab 6-3 NAT LAB 3- Champlain Example Lab
+
+### Summary
