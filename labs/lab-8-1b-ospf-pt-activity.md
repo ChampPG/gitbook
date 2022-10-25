@@ -17,7 +17,7 @@ To configure OSPF for a small enterprise with 4 routers.
 \
 
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p><strong>Network Layout</strong></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p><strong>Network Layout</strong></p></figcaption></figure>
 
 ### Border Router: Network 1
 
