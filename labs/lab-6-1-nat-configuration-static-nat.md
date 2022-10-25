@@ -4,7 +4,7 @@
 
 Configuring of static NAT to be able to connect the network on the left to the server on the right.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Network Layout</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Network Layout</p></figcaption></figure>
 
 ### Router 1 (R1):
 
