@@ -17,9 +17,9 @@ pushd $LFS/sources
 popd
 ```
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>Shows expat-2.4.8 Not installed</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Shows expat-2.4.8 Not installed</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Shows zlib not installed (This is due to the creators removing 1.12.2 due to a vulnerability)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Shows zlib not installed (This is due to the creators removing 1.12.2 due to a vulnerability)</p></figcaption></figure>
 
 #### Manual Download
 
@@ -35,11 +35,28 @@ popd
 
 To get a clean run I had to modify the md5sum file.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>How to get the format for the md5sum file</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>How to get the format for the md5sum file</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>How the md5sum file looks</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>How the md5sum file looks</p></figcaption></figure>
 
 Clean run:
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>Showing a clean md5sum -c md5sum run</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Showing a clean md5sum -c md5sum run</p></figcaption></figure>
 
+### Chapter 4 - Directory Structure for LFS File System (4.2)
+
+```
+sudo -i
+mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
+
+for i in bin lib sbin; do
+  ln -sv usr/$i $LFS/$i
+done
+
+case $(uname -m) in
+  x86_64) mkdir -pv $LFS/lib64 ;;
+esac
+mkdir -pv $LFS/tools
+```
+
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>File System ls -l</p></figcaption></figure>

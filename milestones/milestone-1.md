@@ -100,7 +100,7 @@ sudo ln -sf bash /bin/sh
 
 Output after installing all dependencies
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Clean version-check.sh</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Clean version-check.sh</p></figcaption></figure>
 
 ### Partitioning Scheme
 
@@ -130,7 +130,7 @@ mkfs.ext4 /dev/sdb4 -L LFSHOME
 mkswap /dev/sdb5
 ```
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Command Outputs</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Command Outputs</p></figcaption></figure>
 
 ```
 lsblk -f /dev/sdb
@@ -167,7 +167,7 @@ mkdir -v $LFS/home
 mount -c -t ext4 /dev/sdb4 $LFS/home
 <strong>swapon /dev/sdb5</strong></code></pre>
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Mount on Boot
 
@@ -175,11 +175,11 @@ mount -c -t ext4 /dev/sdb4 $LFS/home
 nano /etc/fstab
 ```
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ```
 reboot
 lsblk
 ```
 
-<figure><img src="../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
