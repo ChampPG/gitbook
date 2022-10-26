@@ -1,4 +1,4 @@
-# Milestone 1
+# Milestone 1 (Chapter 1 & 2)
 
 ### Mothership
 
@@ -100,7 +100,7 @@ sudo ln -sf bash /bin/sh
 
 Output after installing all dependencies
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Clean version-check.sh</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Clean version-check.sh</p></figcaption></figure>
 
 ### Partitioning Scheme
 
@@ -167,7 +167,7 @@ mkdir -v $LFS/home
 mount -c -t ext4 /dev/sdb4 $LFS/home
 <strong>swapon /dev/sdb5</strong></code></pre>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Mount on Boot
 
@@ -182,4 +182,4 @@ reboot
 lsblk
 ```
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
