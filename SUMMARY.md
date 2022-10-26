@@ -10,5 +10,5 @@
 
 ## Milestones
 
-* [Milestone 1](milestones/milestone-1.md)
+* [Milestone 1 (Chapter 1 & 2)](milestones/milestone-1-chapter-1-and-2.md)
 * [Milestone 2](milestones/milestone-2.md)
