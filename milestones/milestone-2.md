@@ -41,7 +41,7 @@ To get a clean run I had to modify the md5sum file.
 
 Clean run:
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Showing a clean md5sum -c md5sum run</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (4).png" alt=""><figcaption><p>Showing a clean md5sum -c md5sum run</p></figcaption></figure>
 
 ### Chapter 4 - Directory Structure for LFS File System (4.2)
 
@@ -124,7 +124,7 @@ source ~/.bash_profile
 echo $LFS
 ```
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>LFS User output</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>LFS User output</p></figcaption></figure>
 
 ### Chapter 5 - Part 3 - Tool Chain and Temporary Tools
 
@@ -142,3 +142,57 @@ cd build
 time { ../configure --prefix=$LFS/tools --with-sysroot=$LFS --target=$LFS_TGT --disable-nls --enable-gprofng=no --disable-werror && make && make install; }
 ```
 
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Build time for binutils-2.39</p></figcaption></figure>
+
+#### 5.3.1 GCC-12.2.0 - Pass 1
+
+```
+cd /mnt/lfs/sources/
+tar -xf gcc-12.2.0.tar.xz
+cd gcc-12.2.0
+tar -xf ../mpfr-4.1.0.tar.xz
+mv -v mpfr-4.1.0 mpfr
+tar -xf ../gmp-6.2.1.tar.xz
+mv -v gmp-6.2.1 gmp
+tar -xf ../mpc-1.2.1.tar.gz
+mv -v mpc-1.2.1 mpc
+```
+
+```
+case $(uname -m) in
+  x86_64)
+    sed -e '/m64=/s/lib64/lib/' \
+        -i.orig gcc/config/i386/t-linux64
+ ;;
+esac
+```
+
+```
+mkdir -v build
+cd build
+
+../configure                   \
+     --target=$LFS_TGT         \
+     --prefix=$LFS/tools       \
+     --with-glibc-version=2.36 \
+     --with-sysroot=$LFS       \
+     --with-newlib             \
+     --without-headers         \
+     --disable-nls             \
+     --disable-shared          \
+     --disable-multilib        \
+     --disable-decimal-float   \
+     --disable-threads         \
+     --disable-libatomic       \
+     --disable-libgomp         \
+     --disable-libquadmath     \
+     --disable-libssp          \
+     --disable-libvtv          \
+     --disable-libstdcxx       \
+     --enable-languages=c,c++
+     
+     make; make install
+
+cd ..
+cat gcc/limitx.h gcc/glimits.h gcc/limity.h > `dirname $(LFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h
+```
