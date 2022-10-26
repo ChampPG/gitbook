@@ -19,7 +19,7 @@ popd
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Shows expat-2.4.8 Not installed</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Shows zlib not installed (This is due to the creators removing 1.12.2 due to a vulnerability)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>Shows zlib not installed (This is due to the creators removing 1.12.2 due to a vulnerability)</p></figcaption></figure>
 
 #### Manual Download
 
@@ -119,7 +119,26 @@ Getting rid of /etc/bashrc
 go back to lfs
 
 ```
-su -lfs
+su - lfs
 source ~/.bash_profile
 echo $LFS
 ```
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>LFS User output</p></figcaption></figure>
+
+### Chapter 5 - Part 3 - Tool Chain and Temporary Tools
+
+#### 5.2 Binutils Pass 1
+
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+```
+cd $LFS/sources/
+tar xf binutils-2.39.tar.xz
+cd binutils-2.39
+mkdir -v build
+cd build
+
+time { ../configure --prefix=$LFS/tools --with-sysroot=$LFS --target=$LFS_TGT --disable-nls --enable-gprofng=no --disable-werror }
+```
+

@@ -115,7 +115,7 @@ sudo -i
 cfdisk /dev/sdb
 ```
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>cfdisk output</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>cfdisk output</p></figcaption></figure>
 
 Now select `Write` and type `yes`
 
