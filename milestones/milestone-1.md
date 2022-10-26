@@ -1,4 +1,4 @@
-# Milestone 1
+# Milestone 1 (Chapter 1 & 2)
 
 ### Mothership
 
