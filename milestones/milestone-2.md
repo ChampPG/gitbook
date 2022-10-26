@@ -60,3 +60,66 @@ mkdir -pv $LFS/tools
 ```
 
 <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>File System ls -l</p></figcaption></figure>
+
+### LFS User
+
+```
+sudo -i
+groupadd lfs
+useradd -s /bin/bash -g lfs -m -k /dev/null lfs
+passwd lfs
+```
+
+#### Permissions
+
+```
+chown -v lfs $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
+case $(uname -m) in
+  x86_64) chown -v lfs $LFS/lib64 ;;
+esac
+```
+
+#### Switch User
+
+```
+su - lfs
+```
+
+#### Bash Profile
+
+```
+cat > ~/.bash_profile << "EOF"
+exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
+EOF
+```
+
+#### Bashrc
+
+```
+cat > ~/.bashrc << "EOF"
+set +h
+umask 022
+LFS=/mnt/lfs
+LC_ALL=POSIX
+LFS_TGT=$(uname -m)-lfs-linux-gnu
+PATH=/usr/bin
+if [ ! -L /bin ]; then PATH=/bin:$PATH; fi
+PATH=$LFS/tools/bin:$PATH
+CONFIG_SITE=$LFS/usr/share/config.site
+export LFS LC_ALL LFS_TGT PATH CONFIG_SITE
+EOF
+```
+
+Getting rid of /etc/bashrc
+
+```
+[ ! -r /etc/bash.bashrc ] || mv -v /etc/bash.bashrc /etc/bash.bashrc.NOUSE
+```
+
+go back to lfs
+
+```
+su -lfs
+source ~/.bash_profile
+echo $LFS
+```
