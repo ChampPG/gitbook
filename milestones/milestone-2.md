@@ -196,3 +196,17 @@ cd build
 cd ..
 cat gcc/limitx.h gcc/glimits.h gcc/limity.h > `dirname $(LFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h
 ```
+
+### 5.4. Linux-5.19.2 API Headers
+
+```
+cd $LFS/source
+tar xf linux-5.19.2.tar.xz
+cd linux-5.19.2
+make nrproper
+make headers
+find usr/include -type f ! -name '.*h' -delete
+cp -rv usr/include $LFS/usr
+```
+
+### 5.5. Glibc-2.36
