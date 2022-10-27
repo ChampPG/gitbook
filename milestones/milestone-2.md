@@ -200,10 +200,10 @@ cat gcc/limitx.h gcc/glimits.h gcc/limity.h > `dirname $($LFS_TGT-gcc -print-lib
 ### 5.4. Linux-5.19.2 API Headers
 
 ```
-cd $LFS/source
+cd $LFS/sources
 tar xf linux-5.19.2.tar.xz
 cd linux-5.19.2
-make nrproper
+make mrproper
 make headers
 find usr/include -type f ! -name '.*h' -delete
 cp -rv usr/include $LFS/usr
@@ -223,4 +223,19 @@ case $(uname -m) in
             ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64/ld-lsb-x86-64.so.3
     ;;
 esac
+
+patch -Np1 -i ../glibc-2.36-fhs-1.patch
+mkdir build; cd build
+echo "rootsbindir=/usr/sbin" > configparms
+
+../configure                             \
+      --prefix=/usr                      \
+      --host=$LFS_TGT                    \
+      --build=$(../scripts/config.guess) \
+      --enable-kernel=3.2                \
+      --with-headers=$LFS/usr/include    \
+      libc_cv_slibdir=/usr/lib
+
+make
+make DESTDIR=$LFS install
 ```
