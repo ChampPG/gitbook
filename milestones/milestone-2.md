@@ -294,5 +294,6 @@ int main()
 ```
 g++ milestone2.cpp -o milestone2
 readelf -l milestone2 | grep ld-linux
+./milestone2
 rm milestone2*
 ```
