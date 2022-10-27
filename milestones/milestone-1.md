@@ -100,7 +100,7 @@ sudo ln -sf bash /bin/sh
 
 Output after installing all dependencies
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Clean version-check.sh</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>Clean version-check.sh</p></figcaption></figure>
 
 ### Partitioning Scheme
 

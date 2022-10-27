@@ -240,7 +240,7 @@ make
 make DESTDIR=$LFS install
 ```
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 ```
 rm a.out
@@ -297,3 +297,5 @@ readelf -l milestone2 | grep ld-linux
 ./milestone2
 rm milestone2*
 ```
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Milestone 2 Test</p></figcaption></figure>
