@@ -167,7 +167,7 @@ mkdir -v $LFS/home
 mount -c -t ext4 /dev/sdb4 $LFS/home
 <strong>swapon /dev/sdb5</strong></code></pre>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Mount on Boot
 

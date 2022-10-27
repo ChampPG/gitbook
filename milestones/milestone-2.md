@@ -142,7 +142,7 @@ cd build
 time { ../configure --prefix=$LFS/tools --with-sysroot=$LFS --target=$LFS_TGT --disable-nls --enable-gprofng=no --disable-werror && make && make install; }
 ```
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Build time for binutils-2.39</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Build time for binutils-2.39</p></figcaption></figure>
 
 #### 5.3.1 GCC-12.2.0 - Pass 1
 
@@ -238,4 +238,60 @@ echo "rootsbindir=/usr/sbin" > configparms
 
 make
 make DESTDIR=$LFS install
+```
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+```
+rm a.out
+```
+
+```
+$LFS/tools/libexec/gcc/$LFS_TGT/12.2.0/install-tools/mkheaders
+```
+
+### 5.6.1. Installation of Target Libstdc++
+
+```
+tar xf gcc-12.2.0.tar.xz
+cd gcc-12.2.0
+mkdir build; cd build
+
+../libstdc++-v3/configure           \
+    --host=$LFS_TGT                 \
+    --build=$(../config.guess)      \
+    --prefix=/usr                   \
+    --disable-multilib              \
+    --disable-nls                   \
+    --disable-libstdcxx-pch         \
+    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/12.2.0
+
+make
+make DESTDIR=$LFS install
+rm -v $LFS/usr/lib/lib{stdc++,stdc++fs,supc++}.la
+```
+
+### Milestone 2 Test
+
+```
+cd /mnt/lfs/sources/glibc-2.36
+nano milestone2.ccp
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  cout << "testing milestone 2" << endl;
+  return 0;
+
+}
+```
+
+```
+g++ milestone2.cpp -o milestone2
+readelf -l milestone2 | grep ld-linux
+rm milestone2*
 ```
