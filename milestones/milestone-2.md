@@ -171,27 +171,27 @@ esac
 mkdir -v build
 cd build
 
-../configure                   \
-     --target=$LFS_TGT         \
-     --prefix=$LFS/tools       \
-     --with-glibc-version=2.36 \
-     --with-sysroot=$LFS       \
-     --with-newlib             \
-     --without-headers         \
-     --disable-nls             \
-     --disable-shared          \
-     --disable-multilib        \
-     --disable-decimal-float   \
-     --disable-threads         \
-     --disable-libatomic       \
-     --disable-libgomp         \
-     --disable-libquadmath     \
-     --disable-libssp          \
-     --disable-libvtv          \
-     --disable-libstdcxx       \
-     --enable-languages=c,c++
+../configure                  \
+    --target=$LFS_TGT         \
+    --prefix=$LFS/tools       \
+    --with-glibc-version=2.36 \
+    --with-sysroot=$LFS       \
+    --with-newlib             \
+    --without-headers         \
+    --disable-nls             \
+    --disable-shared          \
+    --disable-multilib        \
+    --disable-decimal-float   \
+    --disable-threads         \
+    --disable-libatomic       \
+    --disable-libgomp         \
+    --disable-libquadmath     \
+    --disable-libssp          \
+    --disable-libvtv          \
+    --disable-libstdcxx       \
+    --enable-languages=c,c++
      
-     make; make install
+    make; make install
 
 cd ..
 cat gcc/limitx.h gcc/glimits.h gcc/limity.h > `dirname $(LFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h
@@ -210,3 +210,17 @@ cp -rv usr/include $LFS/usr
 ```
 
 ### 5.5. Glibc-2.36
+
+```
+cd $LFS/sources
+tar xf glibc-2.36.tar.xz
+cd glibc-2.36
+
+case $(uname -m) in
+    i?86)   ln -sfv ld-linux.so.2 $LFS/lib/ld-lsb.so.3
+    ;;
+    x86_64) ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64
+            ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64/ld-lsb-x86-64.so.3
+    ;;
+esac
+```
