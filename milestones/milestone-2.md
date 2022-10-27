@@ -276,7 +276,7 @@ rm -v $LFS/usr/lib/lib{stdc++,stdc++fs,supc++}.la
 
 ```
 cd /mnt/lfs/sources/glibc-2.36
-nano milestone2.ccp
+nano milestone2.cpp
 ```
 
 ```cpp
