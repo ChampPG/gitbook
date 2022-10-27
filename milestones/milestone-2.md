@@ -194,7 +194,7 @@ cd build
     make; make install
 
 cd ..
-cat gcc/limitx.h gcc/glimits.h gcc/limity.h > `dirname $(LFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h
+cat gcc/limitx.h gcc/glimits.h gcc/limity.h > `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h
 ```
 
 ### 5.4. Linux-5.19.2 API Headers
