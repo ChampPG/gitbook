@@ -253,6 +253,7 @@ $LFS/tools/libexec/gcc/$LFS_TGT/12.2.0/install-tools/mkheaders
 ### 5.6.1. Installation of Target Libstdc++
 
 ```
+cd $LFS/sources
 tar xf gcc-12.2.0.tar.xz
 cd gcc-12.2.0
 mkdir build; cd build
