@@ -1,4 +1,4 @@
-# Milestone 2
+# Milestone 2 (Chapter 3, 4 & 5)
 
 ### Chapter 3 Packages and Patches using wget-list-systemd
 
@@ -134,7 +134,7 @@ echo $LFS
 
 ```
 cd $LFS/sources/
-tar xf binutils-2.39.tar.xz
+tar -xf binutils-2.39.tar.xz
 cd binutils-2.39
 mkdir -v build
 cd build
