@@ -201,7 +201,7 @@ cat gcc/limitx.h gcc/glimits.h gcc/limity.h > `dirname $($LFS_TGT-gcc -print-lib
 
 ```
 cd $LFS/sources
-tar xf linux-5.19.2.tar.xz
+tar -xf linux-5.19.2.tar.xz
 cd linux-5.19.2
 make mrproper
 make headers
@@ -213,7 +213,7 @@ cp -rv usr/include $LFS/usr
 
 ```
 cd $LFS/sources
-tar xf glibc-2.36.tar.xz
+tar -xf glibc-2.36.tar.xz
 cd glibc-2.36
 
 case $(uname -m) in
@@ -254,7 +254,7 @@ $LFS/tools/libexec/gcc/$LFS_TGT/12.2.0/install-tools/mkheaders
 
 ```
 cd $LFS/sources
-tar xf gcc-12.2.0.tar.xz
+tar -xf gcc-12.2.0.tar.xz
 cd gcc-12.2.0
 mkdir build; cd build
 
