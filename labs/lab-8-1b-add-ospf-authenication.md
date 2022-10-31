@@ -13,3 +13,13 @@ East: enable config t interface GigabitEthernet 0/0 ip ospf message-digest-key 1
 Data Center: enable config t interface GigabitEthernet 0/0 ip ospf message-digest-key 1 md5 testing ip ospf authentication message-digest interface GigabitEthernet 0/1 ip ospf message-digest-key 1 md5 testing ip ospf authentication message-digest interface GigabitEthernet 0/2 ip ospf message-digest-key 1 md5 testing ip ospf authentication message-digest
 
 West: enable config t interface GigabitEthernet 0/0 ip ospf message-digest-key 1 md5 testing ip ospf authentication message-digest
+
+#### Border Router:
+
+```
+enable 
+config t 
+interface GigabitEthernet 0/0 
+ip ospf message-digest-key 1 md5 testing 
+ip ospf authentication message-digest
+```
