@@ -11,4 +11,5 @@
 * [VLANs](subsection/vlans.md)
 * [DHCP](subsection/dhcp.md)
 * [NAT](subsection/nat.md)
+* [OSPF](subsection/ospf.md)
 * [SSH](subsection/ssh.md)
