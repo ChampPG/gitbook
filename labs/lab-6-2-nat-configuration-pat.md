@@ -4,7 +4,7 @@
 
 This lab is around how to setup Dynamic NAT. During this lab we created a NAT pool which the computers on the left can use to connect to the server on the right.
 
-<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Network Layout</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Network Layout</p></figcaption></figure>
 
 ### Commands
 

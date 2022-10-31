@@ -21,6 +21,10 @@ To configure OSPF for a small enterprise with 4 routers.
 
 ### Steps:
 
+1\) Give east and west pc's valid IP addresses.
+
+2\) Run the commands below on the specified router.
+
 #### Border Router: Network 1
 
 ```
