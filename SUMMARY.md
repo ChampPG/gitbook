@@ -19,6 +19,7 @@
 * [Lab 6-2 NAT Configuration - PAT](labs/lab-6-2-nat-configuration-pat.md)
 * [Lab 6-3 NAT LAB 3- Champlain Example Lab](labs/lab-6-3-nat-lab-3-champlain-example-lab.md)
 * [Lab 8-1B OSPF PT Activity](labs/lab-8-1b-ospf-pt-activity.md)
+* [Lab 8-1B Add OSPF Authenication](labs/lab-8-1b-add-ospf-authenication.md)
 
 ## Notes
 
