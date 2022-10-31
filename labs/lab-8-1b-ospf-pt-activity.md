@@ -19,7 +19,9 @@ To configure OSPF for a small enterprise with 4 routers.
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p><strong>Network Layout</strong></p></figcaption></figure>
 
-### Border Router: Network 1
+### Steps:
+
+#### Border Router: Network 1
 
 ```
 enable
@@ -33,7 +35,7 @@ router ospf 1
 network 10.8.1.0 0.0.0.7 area 0
 ```
 
-### East Router: Network 2
+#### East Router: Network 2
 
 ```
 enable
@@ -51,7 +53,7 @@ network 10.8.1.20 0.0.0.3 area 0
 network 10.8.20.0 0.0.0.255 area 0
 ```
 
-### Data Center: Network 3
+#### Data Center: Network 3
 
 ```
 enable
@@ -75,7 +77,7 @@ network 10.8.1.32 0.0.0.3 area 0
 network 10.8.1.20 0.0.0.3 area 0
 ```
 
-### West Router: Network 4
+#### West Router: Network 4
 
 ```
 enable
