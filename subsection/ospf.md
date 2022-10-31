@@ -32,7 +32,9 @@ network 10.8.1.0 0.0.0.7 area 0
 
 ### Add Authentication&#x20;
 
-#### md5
+#### MD5:
+
+[Documentation](https://networklessons.com/ospf/how-to-configure-ospf-md5-authentication)
 
 ```
 enable 
@@ -42,7 +44,7 @@ ip ospf message-digest-key {instance #} md5 {password}
 ip ospf authentication message-digest
 ```
 
-Example
+Example:
 
 ```
 enable 
@@ -52,7 +54,20 @@ ip ospf message-digest-key 1 md5 testing
 ip ospf authentication message-digest
 ```
 
-#### SHA
+Verification:
+
+```
+enable
+show ip ospf interface fastEthernet 0/0
+```
+
+Output:
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Verification Output</p></figcaption></figure>
+
+#### SHA-512:
+
+[Documentation](https://networklessons.com/cisco/ccie-routing-switching-written/ospf-hmac-sha-extended-authentication)
 
 ```
 enable
@@ -66,7 +81,7 @@ interface {interface} {interface_#}
 ip ospf authentication key-chain {key_name}
 ```
 
-Example
+Example:
 
 ```
 enable
@@ -79,3 +94,14 @@ exit
 interface GigabitEthernet 0/1
 ip ospf authentication key-chain R2
 ```
+
+Verification:
+
+```
+enable
+show ip ospf interface GigabitEthernet 0/1 | begin auth
+```
+
+Output:
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Verification Output</p></figcaption></figure>
