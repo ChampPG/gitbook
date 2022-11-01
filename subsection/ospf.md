@@ -9,7 +9,7 @@ description: Open Shortest Path First
 ```
 enable
 config t
-interface GigabitEthernet 0/0
+interface {interface} {interface_#}
 no shutdown
 ip address {ip_address} {subnet}
 exit

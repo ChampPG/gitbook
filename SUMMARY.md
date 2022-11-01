@@ -12,4 +12,5 @@
 * [DHCP](subsection/dhcp.md)
 * [NAT](subsection/nat.md)
 * [OSPF](subsection/ospf.md)
+* [BGP](subsection/bgp.md)
 * [SSH](subsection/ssh.md)
