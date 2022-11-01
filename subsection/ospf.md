@@ -12,7 +12,6 @@ config t
 interface {interface} {interface_#}
 no shutdown
 ip address {ip_address} {subnet}
-exit
 router ospf 1
 network {network_address} {wildcard} area {area_#}
 ```
@@ -25,7 +24,6 @@ config t
 interface GigabitEthernet 0/0
 no shutdown
 ip address 10.8.1.1 255.255.255.248
-exit
 router ospf 1
 network 10.8.1.0 0.0.0.7 area 0
 ```
