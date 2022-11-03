@@ -20,6 +20,8 @@
 * [Lab 6-3 NAT LAB 3- Champlain Example Lab](labs/lab-6-3-nat-lab-3-champlain-example-lab.md)
 * [Lab 8-1B OSPF PT Activity](labs/lab-8-1b-ospf-pt-activity.md)
 * [Lab 8-1B Add OSPF Authenication](labs/lab-8-1b-add-ospf-authenication.md)
+* [9-1 Build-a-Network: Challenge 1](labs/9-1-build-a-network-challenge-1.md)
+* [9-2 Build a Network Challenge 2- BGP](labs/9-2-build-a-network-challenge-2-bgp.md)
 
 ## Notes
 

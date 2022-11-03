@@ -63,4 +63,4 @@ show ip ospf interface {interface} {interface #}
 show ip ospf interface gigabitEthernet 0/0
 ```
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>command output</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>command output</p></figcaption></figure>
