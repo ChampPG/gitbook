@@ -8,11 +8,12 @@ During this lab we took the frame work from the last lab and built out BGP from 
 
 #### Subnet Table Routers
 
-| Name | Network Address | Subnet | Gateway |
-| ---- | --------------- | ------ | ------- |
-|      |                 |        |         |
-|      |                 |        |         |
-|      |                 |        |         |
+| Name                | Network Address | Subnet          | Gateway     |
+| ------------------- | --------------- | --------------- | ----------- |
+| Vermont to BTV      | 192.168.2.0     | 255.255.255.252 | 192.168.2.1 |
+| Vermont to Pacific  | 192.168.1.0     | 255.255.255.252 | 192.168.1.1 |
+| Pacific to Partner  | 192.168.3.0     | 255.255.255.252 | 192.168.3.1 |
+| Pacific to Customer | 192.168.4.0     | 255.255.255.252 | 192.168.4.1 |
 
 #### Subnet Table Burlington <a href="#subnet-table" id="subnet-table"></a>
 
@@ -23,6 +24,20 @@ During this lab we took the frame work from the last lab and built out BGP from 
 | BTV Users    | 172.16.5.0      | 255.255.255.0   | 172.16.5.1  |
 | BTV Data Ctr | 172.16.6.0      | 255.255.255.0   | 172.16..1   |
 | MTL Net      | 172.16.20.0     | 255.255.255.0   | 172.16.20.1 |
+
+**Subnet Table Customer**
+
+| Name      | Network Address | Subnet         | Gateway      |
+| --------- | --------------- | -------------- | ------------ |
+| ​Customer | 10.200.24.0     | 255.255.255.0​ | ​10.200.24.1 |
+
+#### Subnet Table Partner
+
+| Name    | Network Address | Subnet        | Gateway   |
+| ------- | --------------- | ------------- | --------- |
+| Partner | 10.15.6.0       | 255.255.255.0 | 10.15.6.1 |
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Network Photo</p></figcaption></figure>
 
 ### Steps:
 
