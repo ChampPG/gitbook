@@ -8,11 +8,11 @@ During this lab we took the frame work from the last lab and built out BGP from 
 
 #### Subnet Table Routers
 
-|   |   |   |
-| - | - | - |
-|   |   |   |
-|   |   |   |
-|   |   |   |
+| Name | Network Address | Subnet | Gateway |
+| ---- | --------------- | ------ | ------- |
+|      |                 |        |         |
+|      |                 |        |         |
+|      |                 |        |         |
 
 #### Subnet Table Burlington <a href="#subnet-table" id="subnet-table"></a>
 
