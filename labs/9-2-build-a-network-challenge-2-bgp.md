@@ -23,7 +23,7 @@ During this lab we took the frame work from the last lab and built out BGP from 
 | BTV Core     | 172.16.10.0     | 255.255.255.0   | 172.16.10.1 |
 | BTV Users    | 172.16.5.0      | 255.255.255.0   | 172.16.5.1  |
 | BTV Data Ctr | 172.16.6.0      | 255.255.255.0   | 172.16..1   |
-| MTL Net      | 172.16.20.0     | 255.255.255.0   | 172.16.20.1 |
+| MTL          | 172.16.20.0     | 255.255.255.0   | 172.16.20.1 |
 
 **Subnet Table Customer**
 
