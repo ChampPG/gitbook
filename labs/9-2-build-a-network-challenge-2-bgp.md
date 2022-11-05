@@ -16,7 +16,7 @@ During this lab we took the frame work from the last lab and built out BGP from 
 
 #### Subnet Table Burlington <a href="#subnet-table" id="subnet-table"></a>
 
-|              | Network Address | Subnet          | Gateway     |
+| Name         | Network Address | Subnet          | Gateway     |
 | ------------ | --------------- | --------------- | ----------- |
 | BTV to MTL   | 172.16.0.0      | 255.255.255.252 | 172.16.0.1  |
 | BTV Core     | 172.16.10.0     | 255.255.255.0   | 172.16.10.1 |
