@@ -2,7 +2,7 @@
 
 ### Summary
 
-
+The goal of this lab is to setup an IPSEC Site-to-Site VPN between Champlain and Middlebury.
 
 ### Subnet Table
 
