@@ -96,5 +96,5 @@ ip nat inside source static 192.168.7.2 219.93.144.23
 
 #### Tips and tricks:&#x20;
 
-`Router>show access-lists` - This will show all avaible acess lists \
-`Router(config)#no access-list {access-list-num}` - This will delete the access list `Router#show ip nat statistics` - This will show active nat stats
+`Router>show access-lists` - Will show access-lists\
+`Router(config)#no access-list {access-list-num}` - This will delete the access list `Router#show ip nat statistics` - This will show active NAT stats
