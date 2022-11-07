@@ -1,21 +1,5 @@
 # Tips and Tricks
 
-### Access List Tips
-
-Command below will show access-lists
-
-```
-show access-lists
-```
-
-Command below will delete access lit
-
-```
-enable
-conf t
-no access-list {access-list-num}
-```
-
 ### Make Script from Command List
 
 If you're given a command list of
