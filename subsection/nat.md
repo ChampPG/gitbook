@@ -1,7 +1,3 @@
----
-description: Network Address Translation
----
-
 # NAT
 
 ## Types of NAT
