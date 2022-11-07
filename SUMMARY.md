@@ -22,6 +22,7 @@
 * [Lab 8-1B Add OSPF Authenication](labs/lab-8-1b-add-ospf-authenication.md)
 * [9-1 Build-a-Network: Challenge 1](labs/9-1-build-a-network-challenge-1.md)
 * [9-2 Build a Network Challenge 2- BGP](labs/9-2-build-a-network-challenge-2-bgp.md)
+* [LAB 10-1: IPSEC Packet Tracer 1](labs/lab-10-1-ipsec-packet-tracer-1.md)
 
 ## Notes
 

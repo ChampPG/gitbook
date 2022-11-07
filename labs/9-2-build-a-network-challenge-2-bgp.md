@@ -37,7 +37,7 @@ During this lab we took the frame work from the last lab and built out BGP from 
 | ------- | --------------- | ------------- | --------- |
 | Partner | 10.15.6.0       | 255.255.255.0 | 10.15.6.1 |
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Network Photo</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Network Photo</p></figcaption></figure>
 
 ### Steps:
 

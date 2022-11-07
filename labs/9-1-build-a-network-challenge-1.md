@@ -16,7 +16,7 @@ During this lab we had to configure User-labtop and DataCenter-Station to be abl
 
 ### Network Layout
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Network Layout</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Network Layout</p></figcaption></figure>
 
 ### Steps
 
