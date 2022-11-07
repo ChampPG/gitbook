@@ -69,3 +69,9 @@ ip nat inside source list 1 pool test overload
 
 ### Notes:
 
+To show active nat stats
+
+```
+enable
+show ip nat statistics
+```
