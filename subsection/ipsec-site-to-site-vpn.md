@@ -55,3 +55,12 @@ exit
 interface FastEthernet 0/0
 crypto map VPN-MAP
 ```
+
+### Notes:
+
+To see if the VPN is working:
+
+```
+enable
+show crypto ipsec sa
+```
