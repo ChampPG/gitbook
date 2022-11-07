@@ -6,7 +6,7 @@ The {access\_list\_#} must be greater than 100
 
 ```
 ! Identify traffic to send through tunnel with access-list
-access-list {access_list_#} permit ip {src_net}  {src_mask_wildcard}  {dst_net}  {dst_mask_wildcard}  
+access-list {access_list_#} permit ip {src_net} {src_mask_wildcard} {dst_net} {dst_mask_wildcard}
 ! Configure IKE Phase 1 ISAKMP Policy on Router
 crypto isakmp policy 10
 encryption aes 256
