@@ -19,7 +19,7 @@ crypto isakmp key {KEY} address {public_ip_of_other_router}
 crypto ipsec transform-set VPN-SET esp-aes esp-sha-hmac
 !- Create the crypto map "VPN-MAP"
 crypto map VPN-MAP 10 ipsec-isakmp
-description VPN connection to Peer Router
+description VPN connection to {peer_router_name}
 set peer {public_ip_of_other_router}
 set transform-set VPN-SET
 match address {access_list_#}
