@@ -1,0 +1,4 @@
+# Mastodon
+
+## Installation
+

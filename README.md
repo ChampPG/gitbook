@@ -16,9 +16,9 @@ I don't need any of it per say but I have gained a lot of "toys" already. In the
 2. Backup Batteries: How to work with CyberPower batteries and their CLI Tool. I have made a script that will shut down one of the IBM SystemX's if the battery on the UPS goes below 50%.
 3. Headless Debain:&#x20;
 4. Nginx: Making reverse proxy and making subdomains for my services
-   1. I have started to learn more about Nginx Proxy Manager because I have had some problems when doing proxies per machine.
-5. Self-Hosted Cloud:&#x20;
-6. Self-Hosted Bitwarden:&#x20;
+5. Mail Server: How to deploy a mailcow docker container
+6. Self-Hosted Cloud:&#x20;
+7. Self-Hosted Bitwarden:&#x20;
 
 ### What I struggled with.
 

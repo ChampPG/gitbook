@@ -23,6 +23,7 @@
   * [GameVPN](applications-running/personal-ibm-systemx/gamevpn.md)
   * [Bitwarden](applications-running/personal-ibm-systemx/bitwarden.md)
   * [Mail Server](applications-running/personal-ibm-systemx/mail-server.md)
+  * [Mastodon](applications-running/personal-ibm-systemx/mastodon.md)
   * [Owncloud](applications-running/personal-ibm-systemx/owncloud.md)
 * [TrueNAS](applications-running/truenas/README.md)
   * [NextCloud](applications-running/truenas/nextcloud.md)
