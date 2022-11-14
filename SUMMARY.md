@@ -30,3 +30,4 @@
 * [Week 1: Subnet Refresher](notes/week-1-subnet-refresher.md)
 * [Week 2: Subnetting, VLANS, & Cisco Commands](notes/week-2-subnetting-vlans-and-cisco-commands.md)
 * [Week 3: DHCP](notes/week-3-dhcp.md)
+* [Week 4: Campus and Enterprise Network Design Layers](notes/week-4-campus-and-enterprise-network-design-layers.md)
