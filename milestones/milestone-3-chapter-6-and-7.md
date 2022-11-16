@@ -539,3 +539,14 @@ As a finishing touch, create a utility symlink. Many programs and scripts run **
 ```
 ln -sv gcc $LFS/usr/bin/cc
 ```
+
+## Chapter 7 Entering Chroot and Building Additional Temporary Tools
+
+## 7.2. Changing Ownership
+
+```
+chown -R root:root $LFS/{usr,lib,var,etc,bin,sbin,tools}
+case $(uname -m) in
+  x86_64) chown -R root:root $LFS/lib64 ;;
+esac
+```
