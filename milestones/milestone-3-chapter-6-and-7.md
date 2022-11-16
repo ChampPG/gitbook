@@ -197,3 +197,221 @@ Remove the libtool archive file because it is harmful for cross compilation:
 ```
 rm -v $LFS/usr/lib/libmagic.la
 ```
+
+### 6.8.1. Installation of Findutils
+
+Prepare Findutils for compilation:
+
+```
+./configure --prefix=/usr                   \
+            --localstatedir=/var/lib/locate \
+            --host=$LFS_TGT                 \
+            --build=$(build-aux/config.guess)
+```
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make DESTDIR=$LFS install
+```
+
+### 6.9.1. Installation of Gawk
+
+First, ensure some unneeded files are not installed:
+
+```
+sed -i 's/extras//' Makefile.in
+```
+
+Prepare Gawk for compilation:
+
+```
+./configure --prefix=/usr   \
+            --host=$LFS_TGT \
+            --build=$(build-aux/config.guess)
+```
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make DESTDIR=$LFS install
+```
+
+### 6.10.1. Installation of Grep
+
+Prepare Grep for compilation:
+
+```
+./configure --prefix=/usr   \
+            --host=$LFS_TGT
+```
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make DESTDIR=$LFS install
+```
+
+### 6.11.1. Installation of Gzip
+
+Prepare Gzip for compilation:
+
+```
+./configure --prefix=/usr --host=$LFS_TGT
+```
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make DESTDIR=$LFS install
+```
+
+### 6.12.1. Installation of Make
+
+First, fix an issue identified upstream:
+
+```
+sed -e '/ifdef SIGPIPE/,+2 d' \
+    -e '/undef  FATAL_SIG/i FATAL_SIG (SIGPIPE);' \
+    -i src/main.c
+```
+
+Prepare Make for compilation:
+
+```
+./configure --prefix=/usr   \
+            --without-guile \
+            --host=$LFS_TGT \
+            --build=$(build-aux/config.guess)
+```
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make DESTDIR=$LFS install
+```
+
+### 6.13.1. Installation of Patch
+
+Prepare Patch for compilation:
+
+```
+./configure --prefix=/usr   \
+            --host=$LFS_TGT \
+            --build=$(build-aux/config.guess)
+```
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make DESTDIR=$LFS install
+```
+
+### 6.14.1. Installation of Sed
+
+Prepare Sed for compilation:
+
+```
+./configure --prefix=/usr   \
+            --host=$LFS_TGT
+```
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make DESTDIR=$LFS install
+```
+
+### 6.15.1. Installation of Tar
+
+Prepare Tar for compilation:
+
+```
+./configure --prefix=/usr                     \
+            --host=$LFS_TGT                   \
+            --build=$(build-aux/config.guess)
+```
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make DESTDIR=$LFS install
+```
+
+### 6.16.1. Installation of Xz
+
+Prepare Xz for compilation:
+
+```
+./configure --prefix=/usr                     \
+            --host=$LFS_TGT                   \
+            --build=$(build-aux/config.guess) \
+            --disable-static                  \
+            --docdir=/usr/share/doc/xz-5.2.7
+```
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make DESTDIR=$LFS install
+```
+
+Remove the libtool archive file because it is harmful for cross compilation:
+
+```
+rm -v $LFS/usr/lib/liblzma.la
+```
