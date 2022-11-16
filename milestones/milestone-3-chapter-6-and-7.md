@@ -414,7 +414,7 @@ Remove the libtool archive file because it is harmful for cross compilation:
 rm -v $LFS/usr/lib/liblzma.la
 ```
 
-## 6.17. Binutils-2.39 - Pass 2
+### 6.17. Binutils-2.39 - Pass 2
 
 Delete contents of the build folder
 
@@ -455,7 +455,7 @@ Remove the libtool archive files because they are harmful for cross compilation,
 rm -v $LFS/usr/lib/lib{bfd,ctf,ctf-nobfd,opcodes}.{a,la}
 ```
 
-## 6.18. GCC-12.2.0 - Pass 2
+### 6.18. GCC-12.2.0 - Pass 2
 
 Delete contents of the build folder
 
