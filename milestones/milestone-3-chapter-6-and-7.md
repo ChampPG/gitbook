@@ -710,3 +710,218 @@ chgrp -v utmp /var/log/lastlog
 chmod -v 664  /var/log/lastlog
 chmod -v 600  /var/log/btmp
 ```
+
+### 7.7. Gettext-0.21
+
+#### 7.7.1. Installation of Gettext
+
+For our temporary set of tools, we only need to install three programs from Gettext.
+
+Prepare Gettext for compilation:
+
+```
+./configure --disable-shared
+```
+
+**The meaning of the configure option:**
+
+_`--disable-shared`_
+
+We do not need to install any of the shared Gettext libraries at this time, therefore there is no need to build them.
+
+Compile the package:
+
+```
+make
+```
+
+Install the **msgfmt**, **msgmerge**, and **xgettext** programs:
+
+```
+cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext} /usr/bin
+```
+
+### 7.8. Bison-3.8.2
+
+#### 7.8.1. Installation of Bison
+
+Prepare Bison for compilation:
+
+```
+./configure --prefix=/usr \
+            --docdir=/usr/share/doc/bison-3.8.2
+```
+
+**The meaning of the new configure option:**
+
+_`--docdir=/usr/share/doc/bison-3.8.2`_
+
+This tells the build system to install bison documentation into a versioned directory.
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 7.9. Perl-5.36.0
+
+#### 7.9.1. Installation of Perl
+
+Prepare Perl for compilation:
+
+```
+sh Configure -des                                        \
+             -Dprefix=/usr                               \
+             -Dvendorprefix=/usr                         \
+             -Dprivlib=/usr/lib/perl5/5.36/core_perl     \
+             -Darchlib=/usr/lib/perl5/5.36/core_perl     \
+             -Dsitelib=/usr/lib/perl5/5.36/site_perl     \
+             -Dsitearch=/usr/lib/perl5/5.36/site_perl    \
+             -Dvendorlib=/usr/lib/perl5/5.36/vendor_perl \
+             -Dvendorarch=/usr/lib/perl5/5.36/vendor_perl
+```
+
+**The meaning of the new Configure options:**
+
+_`-des`_
+
+This is a combination of three options: -d uses defaults for all items; -e ensures completion of all tasks; -s silences non-essential output.
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 7.10. Python-3.10.6
+
+#### 7.10.1. Installation of Python
+
+
+
+Prepare Python for compilation:
+
+```
+./configure --prefix=/usr   \
+            --enable-shared \
+            --without-ensurepip
+```
+
+**The meaning of the configure option:**
+
+_`--enable-shared`_
+
+This switch prevents installation of static libraries.
+
+_`--without-ensurepip`_
+
+This switch disables the Python package installer, which is not needed at this stage.
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 7.11. Texinfo-6.8
+
+#### 7.11.1. Installation of Texinfo
+
+Prepare Texinfo for compilation:
+
+```
+./configure --prefix=/usr
+```
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 7.12. Util-linux-2.38.1
+
+#### 7.12.1. Installation of Util-linux
+
+The FHS recommends using the `/var/lib/hwclock` directory instead of the usual `/etc` directory as the location for the `adjtime` file. Create this directory with:
+
+```
+mkdir -pv /var/lib/hwclock
+```
+
+Prepare Util-linux for compilation:
+
+```
+./configure ADJTIME_PATH=/var/lib/hwclock/adjtime    \
+            --libdir=/usr/lib    \
+            --docdir=/usr/share/doc/util-linux-2.38.1 \
+            --disable-chfn-chsh  \
+            --disable-login      \
+            --disable-nologin    \
+            --disable-su         \
+            --disable-setpriv    \
+            --disable-runuser    \
+            --disable-pylibmount \
+            --disable-static     \
+            --without-python     \
+            runstatedir=/run
+```
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 7.13. Cleaning up and Saving the Temporary System
+
+#### 7.13.1. Cleaning
+
+First, remove the currently installed documentation to prevent them from ending up in the final system, and to save about 35 MB:
+
+```
+rm -rf /usr/share/{info,man,doc}/*
+```
+
+Second, the libtool .la files are only useful when linking with static libraries.&#x20;
+
+```
+find /usr/{lib,libexec} -name \*.la -delete
+```
+
+It uses about 1 GB of disk space.
+
+```
+rm -rf /tools
+```
