@@ -550,3 +550,5 @@ case $(uname -m) in
   x86_64) chown -R root:root $LFS/lib64 ;;
 esac
 ```
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>ls -l $LFS</p></figcaption></figure>
