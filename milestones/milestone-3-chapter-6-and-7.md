@@ -542,7 +542,7 @@ ln -sv gcc $LFS/usr/bin/cc
 
 ## Chapter 7 Entering Chroot and Building Additional Temporary Tools
 
-## 7.2. Changing Ownership
+### 7.2. Changing Ownership
 
 ```
 chown -R root:root $LFS/{usr,lib,var,etc,bin,sbin,tools}
@@ -552,3 +552,76 @@ esac
 ```
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>ls -l $LFS</p></figcaption></figure>
+
+### 7.3. Preparing Virtual Kernel File Systems
+
+creating directories onto which the file systems will be mounted
+
+```
+mkdir -pv $LFS/{dev,proc,sys,run}
+```
+
+#### 7.3.1. Mounting and Populating /dev
+
+```
+mount -v --bind /dev $LFS/dev
+```
+
+#### 7.3.2. Mounting Virtual Kernel File Systems
+
+Now mount the remaining virtual kernel filesystems:
+
+```
+mount -v --bind /dev/pts $LFS/dev/pts
+mount -vt proc proc $LFS/proc
+mount -vt sysfs sysfs $LFS/sys
+mount -vt tmpfs tmpfs $LFS/run
+```
+
+In some host systems, `/dev/shm` is a symbolic link to `/run/shm`. The /run tmpfs was mounted above so in this case only a directory needs to be created.
+
+```
+if [ -h $LFS/dev/shm ]; then
+  mkdir -pv $LFS/$(readlink $LFS/dev/shm)
+fi
+```
+
+## 7.4. Entering the Chroot Environment
+
+```
+chroot "$LFS" /usr/bin/env -i   \
+    HOME=/root                  \
+    TERM="$TERM"                \
+    PS1='(lfs chroot) \u:\w\$ ' \
+    PATH=/usr/bin:/usr/sbin     \
+    /bin/bash --login
+```
+
+## 7.5. Creating Directories
+
+Create some root-level directories that are not in the limited set required in the previous chapters by issuing the following command:
+
+```
+mkdir -pv /{boot,home,mnt,opt,srv}
+```
+
+Create the required set of subdirectories below the root-level by issuing the following commands:
+
+```
+mkdir -pv /etc/{opt,sysconfig}
+mkdir -pv /lib/firmware
+mkdir -pv /media/{floppy,cdrom}
+mkdir -pv /usr/{,local/}{include,src}
+mkdir -pv /usr/local/{bin,lib,sbin}
+mkdir -pv /usr/{,local/}share/{color,dict,doc,info,locale,man}
+mkdir -pv /usr/{,local/}share/{misc,terminfo,zoneinfo}
+mkdir -pv /usr/{,local/}share/man/man{1..8}
+mkdir -pv /var/{cache,local,log,mail,opt,spool}
+mkdir -pv /var/lib/{color,misc,locate}
+
+ln -sfv /run /var/run
+ln -sfv /run/lock /var/lock
+
+install -dv -m 0750 /root
+install -dv -m 1777 /tmp /var/tmp
+```
