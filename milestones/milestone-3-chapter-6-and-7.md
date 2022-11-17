@@ -24,7 +24,7 @@ Install the package:
 make DESTDIR=$LFS install
 ```
 
-### 6.3.1. Installation of Ncurses
+#### 6.3.1. Installation of Ncurses
 
 First, ensure that **gawk** is found first during configuration:
 
