@@ -625,3 +625,88 @@ ln -sfv /run/lock /var/lock
 install -dv -m 0750 /root
 install -dv -m 1777 /tmp /var/tmp
 ```
+
+### 7.6. Creating Essential Files and Symlinks
+
+```
+ln -sv /proc/self/mounts /etc/mtab
+```
+
+Create a basic `/etc/hosts` file to be referenced in some test suites, and in one of Perl's configuration files as well:
+
+```
+cat > /etc/hosts << EOF
+127.0.0.1  localhost $(hostname)
+::1        localhost
+EOF
+```
+
+Create the `/etc/passwd` file by running the following command:
+
+```
+cat > /etc/passwd << "EOF"
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/dev/null:/usr/bin/false
+daemon:x:6:6:Daemon User:/dev/null:/usr/bin/false
+messagebus:x:18:18:D-Bus Message Daemon User:/run/dbus:/usr/bin/false
+uuidd:x:80:80:UUID Generation Daemon User:/dev/null:/usr/bin/false
+nobody:x:65534:65534:Unprivileged User:/dev/null:/usr/bin/false
+EOF
+```
+
+The actual password for `root` will be set later.
+
+Create the `/etc/group` file by running the following command:
+
+```
+cat > /etc/group << "EOF"
+root:x:0:
+bin:x:1:daemon
+sys:x:2:
+kmem:x:3:
+tape:x:4:
+tty:x:5:
+daemon:x:6:
+floppy:x:7:
+disk:x:8:
+lp:x:9:
+dialout:x:10:
+audio:x:11:
+video:x:12:
+utmp:x:13:
+usb:x:14:
+cdrom:x:15:
+adm:x:16:
+messagebus:x:18:
+input:x:24:
+mail:x:34:
+kvm:x:61:
+uuidd:x:80:
+wheel:x:97:
+users:x:999:
+nogroup:x:65534:
+EOF
+```
+
+We add this user here and delete this account at the end of that chapter.
+
+```
+echo "tester:x:101:101::/home/tester:/bin/bash" >> /etc/passwd
+echo "tester:x:101:" >> /etc/group
+install -o tester -d /home/tester
+```
+
+To remove the “I have no name!” prompt, start a new shell. Since the `/etc/passwd` and `/etc/group` files have been created, user name and group name resolution will now work:
+
+```
+exec /usr/bin/bash --login
+```
+
+The **login**, **agetty**, and **init** programs (and others) use a number of log files to record information such as who was logged into the system and when.&#x20;
+
+```
+touch /var/log/{btmp,lastlog,faillog,wtmp}
+chgrp -v utmp /var/log/lastlog
+chmod -v 664  /var/log/lastlog
+chmod -v 600  /var/log/btmp
+```
