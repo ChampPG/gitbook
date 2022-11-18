@@ -597,6 +597,8 @@ chroot "$LFS" /usr/bin/env -i   \
     /bin/bash --login
 ```
 
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Chroot Environment</p></figcaption></figure>
+
 ## 7.5. Creating Directories
 
 Create some root-level directories that are not in the limited set required in the previous chapters by issuing the following command:
@@ -723,12 +725,6 @@ Prepare Gettext for compilation:
 ./configure --disable-shared
 ```
 
-**The meaning of the configure option:**
-
-_`--disable-shared`_
-
-We do not need to install any of the shared Gettext libraries at this time, therefore there is no need to build them.
-
 Compile the package:
 
 ```
@@ -751,12 +747,6 @@ Prepare Bison for compilation:
 ./configure --prefix=/usr \
             --docdir=/usr/share/doc/bison-3.8.2
 ```
-
-**The meaning of the new configure option:**
-
-_`--docdir=/usr/share/doc/bison-3.8.2`_
-
-This tells the build system to install bison documentation into a versioned directory.
 
 Compile the package:
 
@@ -819,16 +809,6 @@ Prepare Python for compilation:
             --enable-shared \
             --without-ensurepip
 ```
-
-**The meaning of the configure option:**
-
-_`--enable-shared`_
-
-This switch prevents installation of static libraries.
-
-_`--without-ensurepip`_
-
-This switch disables the Python package installer, which is not needed at this stage.
 
 Compile the package:
 

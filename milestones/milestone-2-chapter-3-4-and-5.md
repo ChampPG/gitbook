@@ -142,7 +142,7 @@ cd build
 time { ../configure --prefix=$LFS/tools --with-sysroot=$LFS --target=$LFS_TGT --disable-nls --enable-gprofng=no --disable-werror && make && make install; }
 ```
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Build time for binutils-2.39</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (3).png" alt=""><figcaption><p>Build time for binutils-2.39</p></figcaption></figure>
 
 #### 5.3.1 GCC-12.2.0 - Pass 1
 
@@ -298,4 +298,4 @@ readelf -l milestone2 | grep ld-linux
 rm milestone2*
 ```
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Milestone 2 Test</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>Milestone 2 Test</p></figcaption></figure>
