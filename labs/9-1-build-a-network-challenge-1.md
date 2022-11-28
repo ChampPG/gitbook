@@ -1,4 +1,4 @@
-# 9-1 Build-a-Network: Challenge 1
+# Lab 9-1: Build a Network Challenge - 1
 
 ### Summary
 
