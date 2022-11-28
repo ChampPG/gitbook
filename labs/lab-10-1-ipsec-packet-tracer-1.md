@@ -1,4 +1,4 @@
-# LAB 10-1: IPSEC Packet Tracer 1
+# Lab 10-1: IPSEC Packet Tracer 1
 
 ### Summary
 
@@ -13,7 +13,7 @@ The goal of this lab is to setup an IPSEC Site-to-Site VPN between Champlain and
 | Champlain Private  | 172.16.84.0     | 255.255.255.0 | 172.16.84.1     |
 | Middlebury Private | 192.168.28.0    | 255.255.255.0 | 192.168.28.1    |
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Network Photo</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Network Photo</p></figcaption></figure>
 
 ### Steps:
 
