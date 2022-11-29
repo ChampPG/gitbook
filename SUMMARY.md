@@ -14,4 +14,6 @@
 * [OSPF](subsection/ospf.md)
 * [BGP](subsection/bgp.md)
 * [IPSEC Site-to-Site VPN](subsection/ipsec-site-to-site-vpn.md)
+* [Access-Lists](subsection/access-lists.md)
+* [IPv6](subsection/ipv6.md)
 * [SSH](subsection/ssh.md)
