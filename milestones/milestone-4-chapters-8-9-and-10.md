@@ -1912,3 +1912,686 @@ tar --strip-components=1  \
 ```
 
 ### 8.51. Wheel-0.37.1
+
+Install wheel with the following command:
+
+```
+pip3 install --no-index $PWD
+```
+
+### 8.52. Ninja-1.11.0
+
+Using the _optional_ procedure below allows a user to limit the number of parallel processes via an environment variable, NINJAJOBS. **For example**, setting:
+
+```
+export NINJAJOBS=4
+```
+
+If desired, add the capability to use the environment variable NINJAJOBS by running:
+
+```
+sed -i '/int Guess/a \
+  int   j = 0;\
+  char* jobs = getenv( "NINJAJOBS" );\
+  if ( jobs != NULL ) j = atoi( jobs );\
+  if ( j > 0 ) return j;\
+' src/ninja.cc
+```
+
+Build Ninja with:
+
+```
+python3 configure.py --bootstrap
+```
+
+To test the results, issue:
+
+```
+./ninja ninja_test
+./ninja_test --gtest_filter=-SubprocessTest.SetWithLots
+```
+
+Install the package:
+
+```
+install -vm755 ninja /usr/bin/
+install -vDm644 misc/bash-completion /usr/share/bash-completion/completions/ninja
+install -vDm644 misc/zsh-completion  /usr/share/zsh/site-functions/_ninja
+```
+
+### 8.53. Meson-0.63.1
+
+Compile Meson with the following command:
+
+```
+pip3 wheel -w dist --no-build-isolation --no-deps $PWD
+```
+
+Install the package:
+
+```
+pip3 install --no-index --find-links dist meson
+install -vDm644 data/shell-completions/bash/meson /usr/share/bash-completion/completions/meson
+install -vDm644 data/shell-completions/zsh/_meson /usr/share/zsh/site-functions/_meson
+```
+
+### 8.54. Coreutils-9.1
+
+POSIX requires that programs from Coreutils recognize character boundaries correctly even in multibyte locales. The following patch fixes this non-compliance and other internationalization-related bugs.
+
+```
+patch -Np1 -i ../coreutils-9.1-i18n-1.patch
+```
+
+Now prepare Coreutils for compilation:
+
+```
+autoreconf -fiv
+FORCE_UNSAFE_CONFIGURE=1 ./configure \
+            --prefix=/usr            \
+            --enable-no-install-program=kill,uptime
+```
+
+Compile the package:
+
+```
+make
+```
+
+Now the test suite is ready to be run. First, run the tests that are meant to be run as user `root`:
+
+```
+make NON_ROOT_USERNAME=tester check-root
+```
+
+We're going to run the remainder of the tests as the `tester` user. Certain tests require that the user be a member of more than one group. So that these tests are not skipped, add a temporary group and make the user `tester` a part of it:
+
+```
+echo "dummy:x:102:tester" >> /etc/group
+```
+
+Fix some of the permissions so that the non-`root` user can compile and run the tests:
+
+```
+chown -Rv tester . 
+```
+
+Now run the tests:
+
+```
+su tester -c "PATH=$PATH make RUN_EXPENSIVE_TESTS=yes check"
+```
+
+Remove the temporary group:
+
+```
+sed -i '/dummy/d' /etc/group
+```
+
+Install the package:
+
+```
+make install
+```
+
+Move programs to the locations specified by the FHS:
+
+```
+mv -v /usr/bin/chroot /usr/sbin
+mv -v /usr/share/man/man1/chroot.1 /usr/share/man/man8/chroot.8
+sed -i 's/"1"/"8"/' /usr/share/man/man8/chroot.8
+```
+
+### 8.55. Check-0.15.2
+
+Prepare Check for compilation:
+
+```
+./configure --prefix=/usr --disable-static
+```
+
+Build the package:
+
+```
+make
+```
+
+Compilation is now complete. To run the Check test suite, issue the following command:
+
+```
+make check
+```
+
+Install the package:
+
+```
+make docdir=/usr/share/doc/check-0.15.2 install
+```
+
+### 8.56. Diffutils-3.8
+
+Prepare Diffutils for compilation:
+
+```
+./configure --prefix=/usr
+```
+
+Compile the package:
+
+```
+make
+```
+
+To test the results, issue:
+
+```
+make check
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 8.57. Gawk-5.1.1
+
+First, ensure some unneeded files are not installed:
+
+```
+sed -i 's/extras//' Makefile.in
+```
+
+Prepare Gawk for compilation:
+
+```
+./configure --prefix=/usr
+```
+
+Compile the package:
+
+```
+make
+```
+
+To test the results, issue:
+
+```
+make check
+```
+
+Install the package:
+
+```
+make install
+```
+
+If desired, install the documentation:
+
+```
+mkdir -pv                                   /usr/share/doc/gawk-5.1.1
+cp    -v doc/{awkforai.txt,*.{eps,pdf,jpg}} /usr/share/doc/gawk-5.1.1
+```
+
+### 8.58. Findutils-4.9.0
+
+Prepare Findutils for compilation:
+
+```
+case $(uname -m) in
+    i?86)   TIME_T_32_BIT_OK=yes ./configure --prefix=/usr --localstatedir=/var/lib/locate ;;
+    x86_64) ./configure --prefix=/usr --localstatedir=/var/lib/locate ;;
+esac
+```
+
+Compile the package:
+
+```
+make
+```
+
+To test the results, issue:
+
+```
+chown -Rv tester .
+su tester -c "PATH=$PATH make check"
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 8.59. Groff-1.22.4
+
+Prepare Groff for compilation:
+
+```
+PAGE=<paper_size> ./configure --prefix=/usr
+```
+
+This package does not support parallel build. Compile the package:
+
+```
+make -j1
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 8.60. GRUB-2.06
+
+Prepare GRUB for compilation:
+
+```
+./configure --prefix=/usr          \
+            --sysconfdir=/etc      \
+            --disable-efiemu       \
+            --disable-werror
+```
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make install
+mv -v /etc/bash_completion.d/grub /usr/share/bash-completion/completions
+```
+
+### 8.61. Gzip-1.12
+
+Prepare Gzip for compilation:
+
+```
+./configure --prefix=/usr
+```
+
+Compile the package:
+
+```
+make
+```
+
+To test the results, issue:
+
+```
+make check
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 8.62. IPRoute2-5.19.0
+
+```
+sed -i /ARPD/d Makefile
+rm -fv man/man8/arpd.8
+
+make NETNS_RUN_DIR=/run/netns
+make SBINDIR=/usr/sbin install
+```
+
+### 8.63. Kbd-2.5.1
+
+The behaviour of the backspace and delete keys is not consistent across the keymaps in the Kbd package. The following patch fixes this issue for i386 keymaps:
+
+```
+patch -Np1 -i ../kbd-2.5.1-backspace-1.patch
+```
+
+Remove the redundant **resizecons** program (it requires the defunct svgalib to provide the video mode files - for normal use **setfont** sizes the console appropriately) together with its manpage.
+
+```
+sed -i '/RESIZECONS_PROGS=/s/yes/no/' configure
+sed -i 's/resizecons.8 //' docs/man/man8/Makefile.in
+```
+
+Prepare Kbd for compilation:
+
+```
+./configure --prefix=/usr --disable-vlock
+```
+
+Compile the package:
+
+```
+make
+```
+
+To test the results, issue:
+
+```
+make check
+```
+
+Install the package:
+
+```
+make install
+```
+
+If desired, install the documentation:
+
+```
+mkdir -pv           /usr/share/doc/kbd-2.5.1
+cp -R -v docs/doc/* /usr/share/doc/kbd-2.5.1
+```
+
+### 8.64. Libpipeline-1.5.6
+
+Prepare Libpipeline for compilation:
+
+```
+./configure --prefix=/usr
+```
+
+Compile the package:
+
+```
+make
+```
+
+To test the results, issue:
+
+```
+make check
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 8.65. Make-4.3
+
+Prepare Make for compilation:
+
+```
+./configure --prefix=/usr
+```
+
+Compile the package:
+
+```
+make
+```
+
+To test the results, issue:
+
+```
+make check
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 8.66. Patch-2.7.6
+
+Prepare Patch for compilation:
+
+```
+./configure --prefix=/usr
+```
+
+Compile the package:
+
+```
+make
+```
+
+To test the results, issue:
+
+```
+make check
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 8.67. Tar-1.34
+
+Prepare Tar for compilation:
+
+```
+FORCE_UNSAFE_CONFIGURE=1  \
+./configure --prefix=/usr
+```
+
+Compile the package:
+
+```
+make
+```
+
+To test the results, issue:
+
+```
+make check
+```
+
+Install the package:
+
+```
+make install
+make -C doc install-html docdir=/usr/share/doc/tar-1.34
+```
+
+### 8.68. Texinfo-6.8
+
+Prepare Texinfo for compilation:
+
+```
+./configure --prefix=/usr
+```
+
+Compile the package:
+
+```
+make
+```
+
+To test the results, issue:
+
+```
+make check
+```
+
+Install the package:
+
+```
+make install
+```
+
+Optionally, install the components belonging in a TeX installation:
+
+```
+make TEXMF=/usr/share/texmf install-tex
+```
+
+The Info documentation system uses a plain text file to hold its list of menu entries. The file is located at `/usr/share/info/dir`. Unfortunately, due to occasional problems in the Makefiles of various packages, it can sometimes get out of sync with the info pages installed on the system. If the `/usr/share/info/dir` file ever needs to be recreated, the following optional commands will accomplish the task:
+
+```
+pushd /usr/share/info
+  rm -v dir
+  for f in *
+    do install-info $f dir 2>/dev/null
+  done
+popd
+```
+
+### 8.69. Vim-9.0.0228
+
+```
+tar xf vim-9.0.0228.tar.gz 
+cd vim-9.0.0228
+echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
+./configure --prefix=/usr; make; make install
+
+ln -sv vim /usr/bin/vi
+for L in  /usr/share/man/{,*/}man1/vim.1; do
+    ln -sv vim.1 $(dirname $L)/vi.1
+done
+
+ln -sv ../vim/vim90/doc /usr/share/doc/vim-9.0.0228
+```
+
+### 8.70. Eudev-3.2.11
+
+Prepare Eudev for compilation:
+
+```
+./configure --prefix=/usr           \
+            --bindir=/usr/sbin      \
+            --sysconfdir=/etc       \
+            --enable-manpages       \
+            --disable-static
+```
+
+Compile the package:
+
+```
+make
+```
+
+Create some directories now that are needed for tests, but will also be used as a part of installation:
+
+```
+mkdir -pv /usr/lib/udev/rules.d
+mkdir -pv /etc/udev/rules.d
+```
+
+To test the results, issue:
+
+```
+make check
+```
+
+Install the package:
+
+```
+make install
+```
+
+Install some custom rules and support files useful in an LFS environment:
+
+```
+tar -xvf ../udev-lfs-20171102.tar.xz
+make -f udev-lfs-20171102/Makefile.lfs install
+```
+
+Configuring Eudev
+
+```
+udevadm hwdb --update
+```
+
+### 8.70 MarkupSafe
+
+```
+tar -xf MarkupSafe-2.1.1.tar.gz 
+cd MarkupSafe-2.1.1
+pip3 wheel -w dist --no-build-isolation --no-deps $PWD
+pip3 install --no-index --no-user --find-links dist Markupsafe
+```
+
+### 8.71 Jinja2
+
+```
+tar xf Jinja2-3.1.2.tar.gz 
+cd Jinja2-3.1.2
+pip3 wheel -w dist --no-build-isolation --no-deps $PWD
+pip3 install --no-index --no-user --find-links dist Jinja2
+```
+
+### 8.72. Systemd-251
+
+First, fix an issue introduced by glibc-2.36.
+
+```
+patch -Np1 -i ../systemd-251-glibc_2.36_fix-1.patch
+```
+
+Remove two unneeded groups, `render` and `sgx`, from the default udev rules:
+
+```
+sed -i -e 's/GROUP="render"/GROUP="video"/' \
+       -e 's/GROUP="sgx", //' rules.d/50-udev-default.rules.in
+```
+
+Prepare systemd for compilation:
+
+```
+mkdir -p build
+cd       build
+
+meson --prefix=/usr                 \
+      --buildtype=release           \
+      -Ddefault-dnssec=no           \
+      -Dfirstboot=false             \
+      -Dinstall-tests=false         \
+      -Dldconfig=false              \
+      -Dsysusers=false              \
+      -Drpmmacrosdir=no             \
+      -Dhomed=false                 \
+      -Duserdb=false                \
+      -Dman=false                   \
+      -Dmode=release                \
+      -Dpamconfdir=no               \
+      -Ddocdir=/usr/share/doc/systemd-251 \
+      ..
+```
+
+Compile the package:
+
+```
+ninja
+```
+
+Install the package:
+
+```
+ninja install
+```
+
+Install the man pages:
+
+```
+tar -xf ../../systemd-man-pages-251.tar.xz --strip-components=1 -C /usr/share/man
+```
+
+Create the `/etc/machine-id` file needed by **systemd-journald**:
+
+```
+systemd-machine-id-setup
+```
+
+Setup the basic target structure:
+
+```
+systemctl preset-all
+```
+
+Disable a service for upgrading binary distros. It's useless for a basic Linux system built from source, and it will report an error if it's enabled but not configured:
+
+```
+systemctl disable systemd-sysupdate
+```
