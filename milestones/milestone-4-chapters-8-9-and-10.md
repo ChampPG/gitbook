@@ -2595,3 +2595,428 @@ Disable a service for upgrading binary distros. It's useless for a basic Linux s
 ```
 systemctl disable systemd-sysupdate
 ```
+
+### 8.73. D-Bus-1.14.0
+
+Prepare D-Bus for compilation:
+
+```
+./configure --prefix=/usr                        \
+            --sysconfdir=/etc                    \
+            --localstatedir=/var                 \
+            --runstatedir=/run                   \
+            --disable-static                     \
+            --disable-doxygen-docs               \
+            --disable-xml-docs                   \
+            --docdir=/usr/share/doc/dbus-1.14.0 \
+            --with-system-socket=/run/dbus/system_bus_socket
+```
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make install
+```
+
+Create a symlink so that D-Bus and systemd can use the same `machine-id` file:
+
+```
+ln -sfv /etc/machine-id /var/lib/dbus
+```
+
+### 8.74. Man-DB-2.10.2
+
+Prepare Man-DB for compilation:
+
+```
+./configure --prefix=/usr                         \
+            --docdir=/usr/share/doc/man-db-2.10.2 \
+            --sysconfdir=/etc                     \
+            --disable-setuid                      \
+            --enable-cache-owner=bin              \
+            --with-browser=/usr/bin/lynx          \
+            --with-vgrind=/usr/bin/vgrind         \
+            --with-grap=/usr/bin/grap
+```
+
+Compile the package:
+
+```
+make
+```
+
+To test the results, issue:
+
+```
+make check
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 8.75. Procps-ng-4.0.0
+
+Prepare procps-ng for compilation:
+
+```
+./configure --prefix=/usr                            \
+            --docdir=/usr/share/doc/procps-ng-4.0.0 \
+            --disable-static                         \
+            --disable-kill                           \
+            --with-systemd
+```
+
+Compile the package:
+
+```
+make
+```
+
+To run the test suite, run:
+
+```
+make check
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 8.76. Util-linux-2.38.1
+
+Prepare Util-linux for compilation:
+
+```
+./configure ADJTIME_PATH=/var/lib/hwclock/adjtime   \
+            --bindir=/usr/bin    \
+            --libdir=/usr/lib    \
+            --sbindir=/usr/sbin  \
+            --docdir=/usr/share/doc/util-linux-2.38.1 \
+            --disable-chfn-chsh  \
+            --disable-login      \
+            --disable-nologin    \
+            --disable-su         \
+            --disable-setpriv    \
+            --disable-runuser    \
+            --disable-pylibmount \
+            --disable-static     \
+            --without-python
+```
+
+Compile the package:
+
+```
+make
+```
+
+Install the package:
+
+```
+make install
+```
+
+### 8.77. E2fsprogs-1.46.5
+
+The e2fsprogs documentation recommends that the package be built in a subdirectory of the source tree:
+
+```
+mkdir -v build
+cd       build
+```
+
+Prepare e2fsprogs for compilation:
+
+```
+../configure --prefix=/usr           \
+             --sysconfdir=/etc       \
+             --enable-elf-shlibs     \
+             --disable-libblkid      \
+             --disable-libuuid       \
+             --disable-uuidd         \
+             --disable-fsck
+```
+
+Compile the package:
+
+```
+make
+```
+
+To run the tests, issue:
+
+```
+make check
+```
+
+Install the package:
+
+```
+make install
+```
+
+Skipped over stripping
+
+### 8.80. Cleaning Up
+
+Finally, clean up some extra files left around from running tests:
+
+```
+rm -rf /tmp/*
+```
+
+```
+find /usr/lib /usr/libexec -name \*.la -delete
+```
+
+The compiler built in [Chapter 6](https://www.linuxfromscratch.org/lfs/view/stable-systemd/chapter06/chapter06.html) and [Chapter 7](https://www.linuxfromscratch.org/lfs/view/stable-systemd/chapter07/chapter07.html) is still partially installed and not needed anymore. Remove it with:
+
+```
+find /usr -depth -name $(uname -m)-lfs-linux-gnu\* | xargs rm -rf
+```
+
+Finally, remove the temporary 'tester' user account created at the beginning of the previous chapter.
+
+```
+userdel -r tester
+```
+
+## Chapter 9 System Configuration
+
+### 9.2 Networking Configuration
+
+#### 9.2.1.3. DHCP Configuration
+
+The command below creates a basic configuration file for an IPv4 DHCP setup:
+
+```
+cat > /etc/systemd/network/10-eth-dhcp.network << "EOF"
+[Match]
+Name=<network-device-name>
+
+[Network]
+DHCP=ipv4
+
+[DHCP]
+UseDomains=true
+EOF
+```
+
+#### 9.2.3 Hostname
+
+```
+echo "lfs-paul" > /etc/hostname
+```
+
+#### 9.2.4 /etc/hosts
+
+```
+cat > /etc/hosts << "EOF"
+# Begin /etc/hosts
+
+127.0.0.1 localhost.localdomain localhost
+127.0.1.1 lfs-paul
+::1       localhost ip6-localhost ip6-loopback
+ff02::1   ip6-allnodes
+ff02::2   ip6-allrouters
+
+# End /etc/hosts
+EOF
+```
+
+### 9.5 System Clock
+
+```
+systemctl disable systemd-timesyncd
+```
+
+### 9.7 Locale
+
+```
+cat > /etc/locale.conf << "EOF"
+LANG=EN_US.UTF-8
+EOF
+```
+
+### 9.8 inputrc
+
+```
+cat > /etc/inputrc << "EOF"
+# Begin /etc/inputrc
+# Modified by Chris Lynn <roryo@roryo.dynup.net>
+
+# Allow the command prompt to wrap to the next line
+set horizontal-scroll-mode Off
+
+# Enable 8-bit input
+set meta-flag On
+set input-meta On
+
+# Turns off 8th bit stripping
+set convert-meta Off
+
+# Keep the 8th bit for display
+set output-meta On
+
+# none, visible or audible
+set bell-style none
+
+# All of the following map the escape sequence of the value
+# contained in the 1st argument to the readline specific functions
+"\eOd": backward-word
+"\eOc": forward-word
+
+# for linux console
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+"\e[5~": beginning-of-history
+"\e[6~": end-of-history
+"\e[3~": delete-char
+"\e[2~": quoted-insert
+
+# for xterm
+"\eOH": beginning-of-line
+"\eOF": end-of-line
+
+# for Konsole
+"\e[H": beginning-of-line
+"\e[F": end-of-line
+
+# End /etc/inputrc
+EOF
+```
+
+### 9.9 shells
+
+```
+cat > /etc/shells << "EOF"
+# Begin /etc/shells
+
+/bin/sh
+/bin/bash
+
+# End /etc/shells
+EOF
+```
+
+### 9.10 Systemd configuration
+
+```
+mkdir -pv /etc/systemd/system/getty@tty1.service.d
+
+cat > /etc/systemd/system/getty@tty1.service.d/noclear.conf << EOF
+[Service]
+TTYVTDisallocate=no
+EOF
+```
+
+## Chapter 10 Making LFS Bootable
+
+### 10.2 /etc/fstab
+
+```
+cat > /etc/fstab << "EOF"
+# Begin /etc/fstab
+
+# file system  mount-point  type     options         dump  fsck
+#                                                          order
+
+/dev/sda3     /            ext4   defaults            1     1
+/dev/sda4     /home        ext4   defaults            1     1
+/dev/sda5     swap         swap     pri=1             0     0
+
+# End /etc/fstab
+EOF
+```
+
+### 10.3.1 Linux Kernel
+
+```
+tar xf linux-5.19.2.tar.xz 
+cd tar xf linux-5.19.2
+make mrproper
+make defconfig
+
+make
+make modules_install
+
+mount /dev/sdb2 /boot
+
+cp -iv arch/x86/boot/bzImage /boot/vmlinuz-5.19.2-lfs-11.2-systemd
+cp -iv System.map /boot/System.map-5.19.2
+cp -iv .config /boot/config-5.19.2
+install -d /usr/share/doc/linux-5.19.2
+```
+
+### 10.3.2 Module load order
+
+```
+install -v -m755 -d /etc/modprobe.d
+cat > /etc/modprobe.d/usb.conf << "EOF"
+# Begin /etc/modprobe.d/usb.conf
+
+install ohci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i ohci_hcd ; true
+install uhci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i uhci_hcd ; true
+
+# End /etc/modprobe.d/usb.conf
+EOF
+```
+
+### 10.4 Grub
+
+Powered off snapshot
+
+```
+mount /dev/sdb2 /boot
+```
+
+```
+grub-install /dev/sdb
+```
+
+```
+cat > /boot/grub/grub.cfg << "EOF"
+# Begin /boot/grub/grub.cfg
+set default=0
+set timeout=5
+
+insmod ext2
+set root=(hd0,2)
+
+menuentry "GNU/Linux, Linux 5.19.2-lfs-11.2-systemd" {
+        linux  /vmlinuz-5.19.2-lfs-11.2-systemd root=/dev/sda3 ro
+}
+EOF
+```
+
+### Chapter 11 The End
+
+```
+echo 11.2-systemd > /etc/lfs-release
+cat > /etc/lsb-release << "EOF"
+DISTRIB_ID="Linux From Scratch"
+DISTRIB_RELEASE="11.2-systemd"
+DISTRIB_CODENAME="lfs-paul"
+DISTRIB_DESCRIPTION="Linux From Scratch"
+EOF
+```
+
+```
+cat > /etc/os-release << "EOF"
+NAME="Linux From Scratch"
+VERSION="11.2-systemd"
+ID=lfs
+PRETTY_NAME="Linux From Scratch 11.2-systemd"
+VERSION_CODENAME="lfs-paul"
+EOF
+```
