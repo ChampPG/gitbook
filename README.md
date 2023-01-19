@@ -4,6 +4,10 @@
 
 ### Junior
 
+{% content-ref url="https://app.gitbook.com/s/XRfFXlnajFLDrEaLTRkL/" %}
+[SEC-480: Adv Topics in Cyber Security (DevOps)](https://app.gitbook.com/s/XRfFXlnajFLDrEaLTRkL/)
+{% endcontent-ref %}
+
 {% content-ref url="https://app.gitbook.com/s/2AKOZN7QAJ7f0bP5MzKF/" %}
 [SEC-350: Enterprise and Network Security Controls](https://app.gitbook.com/s/2AKOZN7QAJ7f0bP5MzKF/)
 {% endcontent-ref %}
