@@ -4,6 +4,14 @@
 
 ### Junior
 
+{% content-ref url="https://app.gitbook.com/s/2AKOZN7QAJ7f0bP5MzKF/" %}
+[SEC-350: Enterprise and Network Security Controls](https://app.gitbook.com/s/2AKOZN7QAJ7f0bP5MzKF/)
+{% endcontent-ref %}
+
+{% content-ref url="https://app.gitbook.com/s/3Qsmtw2a8kQMt8K7P5qR/" %}
+[SEC-335: Eth. Hacking & Pen. Testing](https://app.gitbook.com/s/3Qsmtw2a8kQMt8K7P5qR/)
+{% endcontent-ref %}
+
 {% content-ref url="https://app.gitbook.com/s/kZz3gnaYbTd4P6zvkQkn/" %}
 [SYS-300: Linux From Scratch](https://app.gitbook.com/s/kZz3gnaYbTd4P6zvkQkn/)
 {% endcontent-ref %}
