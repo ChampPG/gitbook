@@ -27,3 +27,7 @@
   * [Owncloud](applications-running/personal-ibm-systemx/owncloud.md)
 * [TrueNAS](applications-running/truenas/README.md)
   * [NextCloud](applications-running/truenas/nextcloud.md)
+
+## Cyber Club Presenation
+
+* [Presentation](cyber-club-presenation/presentation.md)
