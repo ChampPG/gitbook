@@ -4,7 +4,13 @@
 
 ### Senior
 
+{% content-ref url="http://127.0.0.1:5000/s/lwjwyZXx0WTx2lLKnGIY/" %}
+[SYS-350: Enterprise Virtualization](http://127.0.0.1:5000/s/lwjwyZXx0WTx2lLKnGIY/)
+{% endcontent-ref %}
 
+{% content-ref url="http://127.0.0.1:5000/s/ONkWEMWluEABqm3rOYht/" %}
+[SEC-440: Systems Security](http://127.0.0.1:5000/s/ONkWEMWluEABqm3rOYht/)
+{% endcontent-ref %}
 
 ### Junior
 
