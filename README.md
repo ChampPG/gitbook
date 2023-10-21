@@ -22,7 +22,7 @@ When I’m not coding or securing our IT infrastructure, I do puzzle games, raci
 
 ### Resume:
 
-{% file src=".gitbook/assets/Paul-Gleason-Resume.docx" %}
+{% file src=".gitbook/assets/Paul Gleason Resume.pdf" %}
 
 <figure><img src=".gitbook/assets/IMG_7008.jpg" alt=""><figcaption><p>Me right after finishing my 70Tb NAS</p></figcaption></figure>
 
@@ -30,20 +30,20 @@ When I’m not coding or securing our IT infrastructure, I do puzzle games, raci
 
 This is because the header links won't show up on mobile devices.
 
-{% content-ref url="https://app.gitbook.com/s/wW8hW4GgX5rPgI6Vupsq/" %}
-[Tech Journals](https://app.gitbook.com/s/wW8hW4GgX5rPgI6Vupsq/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/wW8hW4GgX5rPgI6Vupsq/" %}
+[Tech Journals](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/wW8hW4GgX5rPgI6Vupsq/)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/s/aqbxPmAvDQYpWzB6dTrS/" %}
-[Sysadmin Wiki](https://app.gitbook.com/s/aqbxPmAvDQYpWzB6dTrS/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/aqbxPmAvDQYpWzB6dTrS/" %}
+[Sysadmin Wiki](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/aqbxPmAvDQYpWzB6dTrS/)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/s/8TyySoxS9D5ngc3H5JVv/" %}
-[Personal Projects](https://app.gitbook.com/s/8TyySoxS9D5ngc3H5JVv/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/8TyySoxS9D5ngc3H5JVv/" %}
+[Personal Projects](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/8TyySoxS9D5ngc3H5JVv/)
 {% endcontent-ref %}
 
 &#x20;Use any of the templates if you like!
 
-{% content-ref url="https://app.gitbook.com/s/wtr2qzY5vZLvQtK7FHTb/" %}
-[Templates](https://app.gitbook.com/s/wtr2qzY5vZLvQtK7FHTb/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/wtr2qzY5vZLvQtK7FHTb/" %}
+[Templates](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/wtr2qzY5vZLvQtK7FHTb/)
 {% endcontent-ref %}
