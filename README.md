@@ -4,52 +4,56 @@
 
 ### Senior
 
-{% content-ref url="http://127.0.0.1:5000/s/lwjwyZXx0WTx2lLKnGIY/" %}
-[SYS-350: Enterprise Virtualization](http://127.0.0.1:5000/s/lwjwyZXx0WTx2lLKnGIY/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/wCXGslyd2ZF1jbJFU9rw/" %}
+[SEC-300: ELK Stack for Security Operations](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/wCXGslyd2ZF1jbJFU9rw/)
 {% endcontent-ref %}
 
-{% content-ref url="http://127.0.0.1:5000/s/ONkWEMWluEABqm3rOYht/" %}
-[SEC-440: Systems Security](http://127.0.0.1:5000/s/ONkWEMWluEABqm3rOYht/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/lwjwyZXx0WTx2lLKnGIY/" %}
+[SYS-350: Enterprise Virtualization](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/lwjwyZXx0WTx2lLKnGIY/)
+{% endcontent-ref %}
+
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/ONkWEMWluEABqm3rOYht/" %}
+[SEC-440: Systems Security](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/ONkWEMWluEABqm3rOYht/)
 {% endcontent-ref %}
 
 ### Junior
 
-{% content-ref url="http://127.0.0.1:5000/s/XRfFXlnajFLDrEaLTRkL/" %}
-[SEC-480: Adv Topics in Cyber Security (DevOps)](http://127.0.0.1:5000/s/XRfFXlnajFLDrEaLTRkL/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/XRfFXlnajFLDrEaLTRkL/" %}
+[SEC-480: Adv Topics in Cyber Security (DevOps)](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/XRfFXlnajFLDrEaLTRkL/)
 {% endcontent-ref %}
 
-{% content-ref url="http://127.0.0.1:5000/s/2AKOZN7QAJ7f0bP5MzKF/" %}
-[SEC-350: Enterprise and Network Security Controls](http://127.0.0.1:5000/s/2AKOZN7QAJ7f0bP5MzKF/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/2AKOZN7QAJ7f0bP5MzKF/" %}
+[SEC-350: Enterprise and Network Security Controls](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/2AKOZN7QAJ7f0bP5MzKF/)
 {% endcontent-ref %}
 
-{% content-ref url="http://127.0.0.1:5000/s/3Qsmtw2a8kQMt8K7P5qR/" %}
-[SEC-335: Eth. Hacking & Pen. Testing](http://127.0.0.1:5000/s/3Qsmtw2a8kQMt8K7P5qR/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/3Qsmtw2a8kQMt8K7P5qR/" %}
+[SEC-335: Eth. Hacking & Pen. Testing](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/3Qsmtw2a8kQMt8K7P5qR/)
 {% endcontent-ref %}
 
-{% content-ref url="http://127.0.0.1:5000/s/kZz3gnaYbTd4P6zvkQkn/" %}
-[SYS-300: Linux From Scratch](http://127.0.0.1:5000/s/kZz3gnaYbTd4P6zvkQkn/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/kZz3gnaYbTd4P6zvkQkn/" %}
+[SYS-300: Linux From Scratch](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/kZz3gnaYbTd4P6zvkQkn/)
 {% endcontent-ref %}
 
-{% content-ref url="http://127.0.0.1:5000/s/GG1ypcCqcB1a4JSBwHti/" %}
-[NET-330: Network Design](http://127.0.0.1:5000/s/GG1ypcCqcB1a4JSBwHti/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/GG1ypcCqcB1a4JSBwHti/" %}
+[NET-330: Network Design](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/GG1ypcCqcB1a4JSBwHti/)
 {% endcontent-ref %}
 
 ### Sophomore
 
-{% content-ref url="http://127.0.0.1:5000/s/NtWf54gTO8IS1VsOVHkm/" %}
-[SYS-265: System Admin. & Network Services II](http://127.0.0.1:5000/s/NtWf54gTO8IS1VsOVHkm/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/NtWf54gTO8IS1VsOVHkm/" %}
+[SYS-265: System Admin. & Network Services II](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/NtWf54gTO8IS1VsOVHkm/)
 {% endcontent-ref %}
 
-{% content-ref url="http://127.0.0.1:5000/s/4CUvOd5FNN9Txlw6WQP9/" %}
-[SYS-255: System Admin & Network Services I](http://127.0.0.1:5000/s/4CUvOd5FNN9Txlw6WQP9/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/4CUvOd5FNN9Txlw6WQP9/" %}
+[SYS-255: System Admin & Network Services I](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/4CUvOd5FNN9Txlw6WQP9/)
 {% endcontent-ref %}
 
 ### Freshman
 
-{% content-ref url="http://127.0.0.1:5000/s/ufvKiD5NMmq5b0nrbDCm/" %}
-[NET-150: Network Fundamentals](http://127.0.0.1:5000/s/ufvKiD5NMmq5b0nrbDCm/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/ufvKiD5NMmq5b0nrbDCm/" %}
+[NET-150: Network Fundamentals](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/ufvKiD5NMmq5b0nrbDCm/)
 {% endcontent-ref %}
 
-{% content-ref url="http://127.0.0.1:5000/s/CL4OBeDntX92WEOO8pyV/" %}
-[SYS-140: Systems Fundamentals](http://127.0.0.1:5000/s/CL4OBeDntX92WEOO8pyV/)
+{% content-ref url="http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/CL4OBeDntX92WEOO8pyV/" %}
+[SYS-140: Systems Fundamentals](http://127.0.0.1:5000/o/SgPwcFh7NBRie9TlbcZE/s/CL4OBeDntX92WEOO8pyV/)
 {% endcontent-ref %}
