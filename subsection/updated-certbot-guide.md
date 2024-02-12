@@ -111,7 +111,7 @@ Make cert:
 ```
 certbot certonly \
   --dns-cloudflare \
-  --dns-cloudflare-credentials /home/user/.secrets/certbot/<nameoffile>.ini \
+  --dns-cloudflare-credentials /home/<user>/.secrets/certbot/<nameoffile>.ini \
   --dns-cloudflare-propagation-seconds 60 \
   -d "*.example.com"
 ```
