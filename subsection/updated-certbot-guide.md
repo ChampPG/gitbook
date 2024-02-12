@@ -35,7 +35,7 @@ Make file for domain:
 sudo nano /etc/nginx/sites-available/yourdomain.com
 ```
 
-Config setup:
+Config setup: (This config will be auto managed by cert bot)
 
 ```
 server {
@@ -87,7 +87,7 @@ Make file for domain:
 sudo nano /etc/nginx/sites-available/yourdomain.com
 ```
 
-Config setup:
+Config setup: (This config WON'T be auto managed by certbot)
 
 ```
 server {
