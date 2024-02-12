@@ -88,6 +88,7 @@ sudo certbot renew --dry-run
 Make .ini file for domain in:
 
 ```
+mkdir -p /home/<user>/.secrets/certbot/
 /home/<user>/.secrets/certbot/
 ```
 
