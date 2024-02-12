@@ -29,6 +29,8 @@ ln -s /opt/certbot/bin/certbot /usr/bin/certbot
 
 ## Option 1: User nginx reverse proxy with certbot nginx
 
+### Make Nginx config:
+
 Make file for domain:
 
 ```
