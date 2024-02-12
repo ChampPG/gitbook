@@ -81,42 +81,6 @@ sudo certbot renew --dry-run
 
 ## Option 2: User nginx reverse proxy with certbot cloudflare
 
-Make file for domain:
-
-```
-sudo nano /etc/nginx/sites-available/yourdomain.com
-```
-
-Config setup: (This config WON'T be auto managed by certbot)
-
-```
-server {
-    listen 80;
-    server_name <sub-domain>.yourdomain.com;
-
-    location / {
-        proxy_pass http://your_backend_server_address;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-}
-```
-
-Now simlink your available site to enabled:
-
-```
-sudo ln -s /etc/nginx/sites-available/yourdomain.com /etc/nginx/sites-enabled/
-```
-
-Now test config and restart nginx:
-
-```
-nginx -t
-systemctl restart nginx
-```
-
 ### Cloudflare API token used by Certbot
 
 Make .ini file for domain in:
@@ -153,4 +117,59 @@ Test cert renew:
 
 ```
 sudo certbot renew --dry-run
+```
+
+### Make Nginx config:
+
+Make file for domain:
+
+```
+sudo nano /etc/nginx/sites-available/yourdomain.com
+```
+
+Config setup: (This config WON'T be auto managed by certbot)
+
+```
+server {
+    listen 443 ssl http2;
+    server_name <sub-domain>.yourdomain.com;
+
+    ssl_certificate /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256';
+    ssl_prefer_server_ciphers on;
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 1d;
+    ssl_session_tickets off;
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    resolver 8.8.8.8 8.8.4.4 valid=300s;
+    resolver_timeout 5s;
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    add_header X-Content-Type-Options nosniff;
+    add_header X-Frame-Options SAMEORIGIN;
+    add_header X-XSS-Protection "1; mode=block";
+
+    location / {
+        proxy_pass http://your_backend_server_address;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
+Now simlink your available site to enabled:
+
+```
+sudo ln -s /etc/nginx/sites-available/yourdomain.com /etc/nginx/sites-enabled/
+```
+
+Now test config and restart nginx:
+
+```
+nginx -t
+systemctl restart nginx
 ```
