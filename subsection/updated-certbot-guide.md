@@ -224,3 +224,12 @@ sudo ln -s /etc/nginx/sites-available/yourdomain.com /etc/nginx/sites-enabled/
 nginx -t
 systemctl restart nginx
 ```
+
+## Auto renew with cron
+
+```
+contrab -e
+
+# To renew on the first day of each month
+0 0 1 * * root certbot renew --quiet
+```
