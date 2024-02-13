@@ -233,3 +233,24 @@ contrab -e
 # To renew on the first day of each month
 0 0 1 * * root certbot renew --quiet
 ```
+
+## Extras
+
+### Http Password:
+
+<pre><code>sudo apt-get update
+sudo apt-get install apache2-utils
+
+# -c is used to create the file
+sudo htpasswd -c /etc/nginx/.&#x3C;passwordfile> &#x3C;username>
+
+# If file already exsists and want to add user
+sudo htpasswd /etc/nginx/.&#x3C;passwordfile> &#x3C;anotherusername>
+
+# In nginx config add the line below in location
+location / {
+    auth_basic "Restricted Content";
+<strong>    auth_basic_user_file /etc/nginx/.&#x3C;passwordfile>; # The path to the password file
+</strong>}
+</code></pre>
+
